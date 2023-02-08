@@ -27,5 +27,12 @@ Heute haben wir den überarbeiteten code von herr Buh( sehr freundlich) angteguc
 Eis, kochendes wasser, Parameter rechner ausrechnen, Steinhart hart formel, haben es geshcafft, neuee Werte eingesetzt 
 
 02.02.2023
+
 Thermistor funktioniert, Transistor recherchieren, Thermistor testen, Glühbirne anschliessen ( nächster Schritt) 
+
+08.02.2023
+
+Huete aufbau von her bzhl thermistor angeguckt, plam für freitag, Kabel sichern, trnasistor mit 230 V, Kabelschuhe holt Herr buhl, Aufbau dann am Fteiitag
+
+
 
