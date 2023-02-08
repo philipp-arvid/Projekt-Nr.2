@@ -25,3 +25,7 @@ Heute haben wir den überarbeiteten code von herr Buh( sehr freundlich) angteguc
 
 01.02.2023
 Eis, kochendes wasser, Parameter rechner ausrechnen, Steinhart hart formel, haben es geshcafft, neuee Werte eingesetzt 
+
+02.02.2023
+Thermistor funktioniert, Transistor recherchieren, Thermistor testen, Glühbirne anschliessen ( nächster Schritt) 
+
