@@ -34,5 +34,12 @@ Thermistor funktioniert, Transistor recherchieren, Thermistor testen, Glühbirne
 
 Huete aufbau von her bzhl thermistor angeguckt, plam für freitag, Kabel sichern, trnasistor mit 230 V, Kabelschuhe holt Herr buhl, Aufbau dann am Fteiitag
 
+10.02.2023
+
+erstmal haben wir die Kabel verbunden, indem wir gelötet haben. ein aufbau hergestellt, dass die Lampe über den Transostor gesteiert wird. Getestet, ob der stromkreis funktionmiert, ohn eden Transistor enzuschakten, und anschließend haben wir mit dem transistor einen Fehlstrom erzeugt. dasdurch hat sich herausgestellt, dass etwas m aufbau nicht korrekt war und in der nächstenm Stunde werden wir den aufbau überarbeiten müssen. 
+
+15.02.2023 
+
+
 
 
