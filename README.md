@@ -40,6 +40,7 @@ erstmal haben wir die Kabel verbunden, indem wir gelötet haben. ein aufbau herg
 
 15.02.2023 
 
+Heute haben wir recherchiert, um mit einem relay die nächste Stunde einen richtigen aufbau erzielen zu können. Dieser wird uns nächste Stunde zu verfügung stehen und dann können wir hoffentlich mit seperaten Stromkreisen den Transistor richtig steuern. 
 
 
 
