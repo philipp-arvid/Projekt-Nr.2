@@ -43,7 +43,8 @@ erstmal haben wir die Kabel verbunden, indem wir gelötet haben. ein aufbau herg
 Heute haben wir recherchiert, um mit einem relay die nächste Stunde einen richtigen aufbau erzielen zu können. Dieser wird uns nächste Stunde zu verfügung stehen und dann können wir hoffentlich mit seperaten Stromkreisen den Transistor richtig steuern. Wir haben us Videos angesehen und mehrere Internetseiten durchgelesen. Dadurch haben wir uns den genauen Aufbau aus mehreren Internetseiten zusammmengeplant. Nächste Woche können wir dies dann aufbauen und haben damit dann den Aufbau unseres Projekts so gut wie fertig
 
 22.02.23
-Heute aufbau, test mit irgentwas
+Heute aufbau, test mit irgentwa; FREITAG cODE SCHREIBEN für relay test mit LED dnach mit glühlampe
+
 
 
 
