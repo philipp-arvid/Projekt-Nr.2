@@ -45,6 +45,10 @@ Heute haben wir recherchiert, um mit einem relay die nächste Stunde einen richt
 22.02.23
 Heute aufbau, test mit irgentwa; FREITAG cODE SCHREIBEN für relay test mit LED dnach mit glühlampe
 
+24.02.23
+
+relay weiter ausprobiert, lange nicht geklappt, Beschriftung vertauscht, relay 4er Module probiert mit voltMeter- auch nicht geklappt. Danach probiert an der Schaltstelle (Input am Relay)  mit einer externen Netztstelle einen Impuls zu senden. Das hat gekllappt, abver erkenntnis man braucht LOW für Schalter nicht HIgh bei relay. Dadurch hat sich alles gfeklärt und wir haben die Gölühbirne angeschlossen und mit einem einasch if code den Schwellenwert für das Schalten bei 25 grad gesetzt. Dies hat geklappt und als nächstes müssen wir den Aufbau in den Schuhkarton bringen und danach mit PID steuern. Als letztes noch Ventilator.- 
+
 
 
 
