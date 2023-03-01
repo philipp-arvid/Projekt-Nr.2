@@ -51,4 +51,4 @@ relay weiter ausprobiert, lange nicht geklappt, Beschriftung vertauscht, relay 4
 
 01.03.2023
 
-Heute aufbau im Schuhkarton, erster Test mit ferttigem Aufbau, Test erflogreich und nun nächstes Ziel: PID programmieren und damit di Glhülmape steuern
+Heute aufbau im Schuhkarton, erster Test mit ferttigem Aufbau, Test erflogreich und nun nächstes Ziel: PID programmieren und damit di Glhülmape steuern, PID Recherche, Planung Arvid nächste Woche nicht da
