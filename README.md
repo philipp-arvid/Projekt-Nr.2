@@ -78,3 +78,4 @@ Alles zusammengefügt, anschliessen an gesamnten Code, Temperatur falsch- warum?
 17.4
 
 Loch imk Karton für Ventilator und PID Recherche, Lösung xes Problems vom 15.3 
+https://playground.arduino.cc/Code/PIDLibrary/
