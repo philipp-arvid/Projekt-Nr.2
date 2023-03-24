@@ -78,203 +78,124 @@ Alles zusammengefügt, anschliessen an gesamnten Code, Temperatur falsch- warum?
 17.4
 
 Loch imk Karton für Ventilator und PID Recherche, Lösung xes Problems vom 15.3 
-https://playground.arduino.cc/Code/PIDLibrary/
 
-#if ARDUINO >= 100
-  #include "Arduino.h"
-#else
-  #include "WProgram.h"
-#endif
+24.03.23
 
-#include <PID_AutoTune_v0.h>
+Heute haben wir weiter für PId recherchiert. Es hiess am anfang man müsste eine library verwenden, doch da dies für unser Projekt noch nicht nötig ist, haben wir nach PID gesucht, die ohne Library funktioniert. Da haben wir diese Website gefunden: http://brettbeauregard.com/blog/2011/04/improving-the-beginners-pid-introduction/
 
 
-PID_ATune::PID_ATune(double* Input, double* Output)
+
+Und mti diesem code bis jetzt gearbeitet, der immernoch einige Probleme aufweist: 
+
+  int sensorPin = A0;
+  int bitwertNTC = 0;
+
+ long serienWiderstand = 9920; //des Widerstandes in Serie 
+  long nennWiderstand = 10050.46; // des NTCs
+  long nennW_H = 10000; //laut Hersteller
+
+  int bWert = 3307.29; // B- Wert vom NTC
+  int b_H = 3435; //B-Wert laut Hersteller 
+
+  double widerstandNTC = 0; 
+  double kelvinBias = 273.15;// 0°Celsius in Kelvin 
+  double Tn = kelvinBias + 25; //Nenntemperatur in Kelvin 
+  double T_K_3 = 0;  //Die mit 3 Parametern errechnete IstTemperatur in Kelvin
+  double T_C_3 = 0; //Die errechnete IstTemperatur in Celsius
+
+  double T_K_B = 0;  //Die mit 2 Parametern errechnete IstTemperatur in Kelvin
+  double T_C_B = 0; //Die errechnete IstTemperatur in Celsius
+
+  double T_K_H = 0;  //Die mit Defaultparametern errechnete IstTemperatur in Kelvin
+  double T_C_H = 0; //Die mit Defaultparametern errechnete IstTemperatur in Celsius
+
+  double koA = 0.0008058251861;
+  double koB = 0.0002644552360;
+  double koC = 0.0000001421890507;
+
+
+  unsigned long lastTime;
+  double input = T_C_H;
+  double output = 0;
+  double setpoint = 32;
+
+
+ double errSum, lastErr;
+
+  void compute() 
+
 {
-	input = Input;
-	output = Output;
-	controlType =0 ; //default to PI
-	noiseBand = 0.5;
-	running = false;
-	oStep = 30;
-	SetLookbackSec(10);
-	lastTime = millis();
-	
+
+unsigned long now = millis();
+double timeChange = (double)(now - lastTime);
+
+double error = setpoint - input; 
+errSum += (error * timeChange);
+double dErr = (error - lastErr) / timeChange; 
+
+Output = kp * error + ki * errSum + kd * dErr; 
+
+  lastErr = error; 
+  lastTime = now; 
+
 }
 
+void setTunings(double kp, double ki, double kd)   
+
+{
+kp = 1.5;
+ki = 0.05;
+kd = 0.1;
 
 
-void PID_ATune::Cancel()
-{
-	running = false;
-} 
- 
-int PID_ATune::Runtime()
-{
-	justevaled=false;
-	if(peakCount>9 && running)
-	{
-		running = false;
-		FinishUp();
-		return 1;
-	}
-	unsigned long now = millis();
-	
-	if((now-lastTime)<sampleTime) return false;
-	lastTime = now;
-	double refVal = *input;
-	justevaled=true;
-	if(!running)
-	{ //initialize working variables the first time around
-		peakType = 0;
-		peakCount=0;
-		justchanged=false;
-		absMax=refVal;
-		absMin=refVal;
-		setpoint = refVal;
-		running = true;
-		outputStart = *output;
-		*output = outputStart+oStep;
-	}
-	else
-	{
-		if(refVal>absMax)absMax=refVal;
-		if(refVal<absMin)absMin=refVal;
-	}
-	
-	//oscillate the output base on the input's relation to the setpoint
-	
-	if(refVal>setpoint+noiseBand) *output = outputStart-oStep;
-	else if (refVal<setpoint-noiseBand) *output = outputStart+oStep;
-	
-	
-  //bool isMax=true, isMin=true;
-  isMax=true;isMin=true;
-  //id peaks
-  for(int i=nLookBack-1;i>=0;i--)
-  {
-    double val = lastInputs[i];
-    if(isMax) isMax = refVal>val;
-    if(isMin) isMin = refVal<val;
-    lastInputs[i+1] = lastInputs[i];
+}
+
+  const int RELAY_PIN = 8; 
+
+  void setup() {
+    pinMode (7, OUTPUT);
+    pinMode(RELAY_PIN, OUTPUT);
+
+ 	Serial.begin(9600); 
+
   }
-  lastInputs[0] = refVal;  
-  if(nLookBack<9)
-  {  //we don't want to trust the maxes or mins until the inputs array has been filled
-	return 0;
-	}
+
+  void loop() {
+   digitalWrite (7,HIGH);
+    delay (100);
+    digitalWrite (7,LOW);
+    delay (1000);
+
+  	Serial.println("Sensormessung: ");
+ 	bitwertNTC = analogRead(sensorPin); // lese Analogwert an A0 aus 
+	
+     //1023 entspricht maximaler Spannung  	widerstandNTC = serienWiderstand*(((double)bitwertNTC/1023)/(1-((double)bitwertNTC/1023))); // berechne den Widerstandswert vom NTC als Spannungsteiler
+
+  	T_K_3 = 1/(koA+koB*log(widerstandNTC)+koC*log(widerstandNTC)*log(widerstandNTC)*log(widerstandNTC));
   
-  if(isMax)
-  {
-    if(peakType==0)peakType=1;
-    if(peakType==-1)
-    {
-      peakType = 1;
-      justchanged=true;
-      peak2 = peak1;
-    }
-    peak1 = now;
-    peaks[peakCount] = refVal;
-   
-  }
-  else if(isMin)
-  {
-    if(peakType==0)peakType=-1;
-    if(peakType==1)
-    {
-      peakType=-1;
-      peakCount++;
-      justchanged=true;
-    }
-    
-    if(peakCount<10)peaks[peakCount] = refVal;
-  }
+    T_K_B = 1/((1/Tn)+((double)1/bWert)*log((double)widerstandNTC/nennWiderstand)); // Steinhart-Hart-Gleichung ermittle die Temperatur in Kelvin     T_K_H = 1/((1/Tn)+((double)1/b_H)*log((double)widerstandNTC/nennW_H)); // Steinhart-Hart-Gleichung ermittle die Temperatur in Kelvin 
+	
+  	T_C_3 = T_K_3 - kelvinBias; // ermittle die Temperatur in °C
+  	T_C_B = T_K_B - kelvinBias; // ermittle die Temperatur in °C
+  	T_C_H = T_K_H - kelvinBias; // ermittle die Temperatur in °C
+
+  	Serial.print("Analog: "); // 
+  	Serial.println(bitwertNTC); // 
+  	Serial.print("NTC- Widerstand: "); //Gebe die ermittelten Werte aus
+  	Serial.println(widerstandNTC); // 
   
-  if(justchanged && peakCount>2)
-  { //we've transitioned.  check if we can autotune based on the last peaks
-    double avgSeparation = (abs(peaks[peakCount-1]-peaks[peakCount-2])+abs(peaks[peakCount-2]-peaks[peakCount-3]))/2;
-    if( avgSeparation < 0.05*(absMax-absMin))
-    {
-		FinishUp();
-      running = false;
-	  return 1;
-	 
-    }
+  	Serial.print("Temp. 3 Param: "); //Gebe die ermittelten Werte aus
+  	Serial.print(T_C_3); //
+  	Serial.print("   Temp.B: "); //Gebe die ermittelten Werte aus
+  	Serial.print(T_C_B); //
+  	Serial.print("   Temp.Default: "); //Gebe die ermittelten Werte aus
+  	Serial.print(T_C_H); //
+    Serial.println("\n");
+    delay(1000); // Warte kurz, dann mache alles nochmal
+  // if(T_C_H<35)
+  // digitalWrite(RELAY_PIN, LOW);
+   //if(T_C_H>35)
+  // digitalWrite(RELAY_PIN, HIGH);
   }
-   justchanged=false;
-	return 0;
-}
-void PID_ATune::FinishUp()
-{
-	  *output = outputStart;
-      //we can generate tuning parameters!
-      Ku = 4*(2*oStep)/((absMax-absMin)*3.14159);
-      Pu = (double)(peak1-peak2) / 1000;
-}
-
-double PID_ATune::GetKp()
-{
-	return controlType==1 ? 0.6 * Ku : 0.4 * Ku;
-}
-
-double PID_ATune::GetKi()
-{
-	return controlType==1? 1.2*Ku / Pu : 0.48 * Ku / Pu;  // Ki = Kc/Ti
-}
-
-double PID_ATune::GetKd()
-{
-	return controlType==1? 0.075 * Ku * Pu : 0;  //Kd = Kc * Td
-}
-
-void PID_ATune::SetOutputStep(double Step)
-{
-	oStep = Step;
-}
-
-double PID_ATune::GetOutputStep()
-{
-	return oStep;
-}
-
-void PID_ATune::SetControlType(int Type) //0=PI, 1=PID
-{
-	controlType = Type;
-}
-int PID_ATune::GetControlType()
-{
-	return controlType;
-}
-	
-void PID_ATune::SetNoiseBand(double Band)
-{
-	noiseBand = Band;
-}
-
-double PID_ATune::GetNoiseBand()
-{
-	return noiseBand;
-}
-
-void PID_ATune::SetLookbackSec(int value)
-{
-    if (value<1) value = 1;
-	
-	if(value<25)
-	{
-		nLookBack = value * 4;
-		sampleTime = 250;
-	}
-	else
-	{
-		nLookBack = 100;
-		sampleTime = value*10;
-	}
-}
-
-int PID_ATune::GetLookbackSec()
-{
-	return nLookBack * sampleTime / 1000;
-}
 
 
