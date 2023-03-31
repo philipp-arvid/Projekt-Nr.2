@@ -199,3 +199,10 @@ kd = 0.1;
   }
 
 
+29.3.2023
+entfallen
+
+31.03.2023
+heute haben wir weiter mit pid versucht, gugvkt ob relay analog kann, getestet und ergebmnis, es klappt nicht, also: heute machen wir pid mit Ventilator und steuern Glühbirne nur mit if. 
+
+
