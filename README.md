@@ -22,7 +22,6 @@ Heute haben wir weiter recherchiert, wie man einen Ntc Wiedersandswert in Temper
 
 Heute haben wir mit einem code, den wir auf der Website(/www.mymakerstuff.de/2018/05/18/arduino-tutorial-der-temperatursensor/) gefunden haben, versucht den Ntc Wiederdtand in eine Temperatur umzuzrechnen. Dabei wird sich auf die Steinhart-hart-Gleichung bezogen. Doch dieser Code hat nicht geklappt, weshlab wir uns anschließend gefrgat haben, woran das liegen könnte. Wir haben gedacht es könnte daran liegen, dass wir anders als bei unserer Quelle im  Internet einen anderen Wiederstand in Reihe geschaltet haben und oder einen anderen Thermistor haben. Dass wir einen anderen Thermistor haben könnte eine Rolle spielen, da jeder Thermistor einen spezifischem B-wert hat. Da wir nicht wussten, was für ein B-Wert unser Thermistor hat, müssen wir durch eine Formel, welche Tempertaurmesswerte in Kombinationen mit den jeweils zugehörigen Wiederstandsmesswerten nutzt, um den Materialspezifischen B-wert bestimmen. Dies werden wir in den nächsten Stunden verfolgen.
 
-30.01.2023
 
 Heute haben wir nach vielen weiteren Messungen wieder keine passende Lösung ermittelt. Wir haben aber dafür herausgefunden, dass der B-Wert von der D-Funktion abhängig ist. Auch mit der Float-Funktion hat es nicht funktioniert. 
  
