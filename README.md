@@ -77,7 +77,7 @@ Heute haben wir dann den Code des Ventilators mit dem Code der Glühlampe zusamm
 
 17.3
 
-Heute haben wir dann den Ventilator in den Katorn eingebaut, sodass dieser die Luft aus dem Karton herauspustet. Danach haben wir uns dann über PID informiert, welches unser Projekt vervollständigen soll. Dabei gibt es allerdings viele Möglichkeiten mit der Library. Wir wollen PID aber in der einfachen Form ohne Library durchführen.
+Heute haben wir dann den Ventilator in den Karton eingebaut, sodass dieser die Luft aus dem Karton herauspustet. Danach haben wir uns dann über PID informiert, welches unser Projekt vervollständigen soll. Dabei gibt es allerdings viele Möglichkeiten mit der Library. Wir wollen PID aber in der einfachen Form ohne Library durchführen.
 
 24.03.23
 
