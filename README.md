@@ -58,21 +58,22 @@ relay weiter ausprobiert, lange nicht geklappt, Beschriftung vertauscht, relay 4
 
 01.03.2023
 
-Heute aufbau im Schuhkarton, erster Test mit ferttigem Aufbau, Test erflogreich und nun nächstes Ziel: PID programmieren und damit di Glhülmape steuern, PID Recherche, Planung Arvid nächste Woche nicht da
+Heute aufbau im Schuhkarton, erster Test mit ferttigem Aufbau, Test erflogreich und nun nächstes Ziel: PID programmieren und damit di Glhülmape steuern, PID Recherche
 03.03.2023 
 
 doppelstunde ist leider entfallen und daher haben wir am Blog vorherige Stunden umgeschrieben und Ergänzt, da wir dies in den Stunden manchmal im instenisven Arbeiten a, Projekt vernachlässigt haben. 
 
 08.03 
 
-Philipp an Ventilator
+In der heutigen Stunde war Arvid nicht da. Philipp hat heute den Ventilator eines alten PCs geholt und diesen auseinandergebaut, sodass wir nur noch den Ventilator ohne Kühlung etc. haben. Die hat viele Probleme Bereitet, weil der Ventilator so gebaut ist, dass man ihn nicht auseinander bauen soll. Dann habe ich mich über den Ventilator informiert. Dieser hat mehrere Anschlüsse, welche wir jetzt passend zuordnen können. Nächste Stunde wollen wir dann den Ventilator steuern.
 
 10.03.2023
 
-Philipp an Ventilator
+Diese Stunde war Arvid wieder nicht da. Ich habe den Ventilator in in den Einbau angebunden und einen Code für diesen geschrieben. Zu Beginn habe ich den Ventilator mit Relay gesteuert. Am Ende der Stunde lief der Ventilator dann durch einen Knopf. Hierdurch wollen wir steurn, wann der Ventilator läuft. Durch die Lampe soll die Temperatur erreicht werden. Wenn wir dann eine neue Zieltemperatur haben kühlen wir den Karton manuell durch den Ventilator runter, damit die Lampe dann wieder mit PID die Zieltemperatur erreichen kann.
 
 15.3
 
+Heute 
 Alles zusammengefügt, anschliessen an gesamnten Code, Temperatur falsch- warum? 
 
 17.4
