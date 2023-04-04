@@ -8,22 +8,28 @@ Blog Nr.2
 
 17.01.2023
 
-Heute haben wir die ersten Materialien zusammen getragen. Nun haben wir eine 25 Watt Glühbirne und müssen uns jetzt überlegen, wie oder welchen Transistor wir brauchen um Strom aus der Steckdose steuern zu können. Als nächstes müssen wir uns auch übelergen, wie wir unseren Wärmesensor kalibrieren. Doch dies ist nicht ganz einfach, da der Npc Wärmesensor nicht linear funktioniert.
+Heute haben wir die ersten Materialien zusammen getragen. Nun haben wir eine 25 Watt Glühbirne und müssen uns jetzt überlegen, welchen Transistor wir brauchen um Strom aus der Steckdose steuern zu können. Als nächstes müssen wir uns auch übelergen, wie wir unseren Wärmesensor kalibrieren. Doch dies ist nicht ganz einfach, da der Npc Wärmesensor nicht linear funktioniert. Dadurch muss man dort eine Formel für den die Wärme, abhängig von dem Wiederstand, welches der Wärmesensor ist, aufstellen.
 
 18.01.2023
 
-Heute haben wir einen ersten Schritt geschafft. Wir haben es geschafft, auch nach Problemen den Wiedertstand des NTCs auszulesen. Als nächstes müssen wir den NTC Wiederstan in eine Temperatur umrechnen. https://forum.arduino.cc/t/ol-temperatur-messen-welcher-oltemperaturgeber-kfz/152055/12#msg1170722 https://www.mymakerstuff.de/2018/05/18/arduino-tutorial-der-temperatursensor/
+Heute haben wir einen ersten Schritt geschafft. Wir haben es geschafft, auch nach Problemen den Wiedertstand des NTCs auszulesen. Damit haben wir die Grundlage für die Temperaturberechnung gelegt. Dies wollen wir dann in den nächsten Stunden machen. Dafür haben wir schonmal einen Ansatz aus dem Arduino-Forum. https://forum.arduino.cc/t/ol-temperatur-messen-welcher-oltemperaturgeber-kfz/152055/12#msg1170722 https://www.mymakerstuff.de/2018/05/18/arduino-tutorial-der-temperatursensor/
 
-24.01.2023 heute haben wir weiter recherchiert, wie man einen Ntc Wiedersandswert in Temperarur umrechnet. Da haben wir eine wuelle schon gefunden, doch leider hat das noch nicht geklappt- hier ist der code damit wir nicht immer ein halbe stunde wieder auf dem Stand von der stunde davor kommen müssen .
+24.01.2023 
+
+Heute haben wir weiter recherchiert, wie man einen Ntc Wiedersandswert in Temperarur umrechnet. Wir haben eine Quelle mit einem Code gefunden. Dieser funktioniert aber auch nach Kontrolle und der Bearbeitung einiger Fehler nicht. Also müssen wir in der nächsten Stunde weiter an der Rechnung der Temperatur arbeiten.
 
 25.01.2023
 
-Heute haben wir mit einem code, den wir auf der Website(/www.mymakerstuff.de/2018/05/18/arduino-tutorial-der-temperatursensor/) gefunden haben, versucht den Ntc Wiederdtand in eine Temperatur umzuzrechnen. Dabei wird sich auf die Steinhart-hart-Gleichung bezogen. Doch dieser Code hat nicht geklappt, weshlab wir uns anschließend gefrgat haben, owran das leigen könnte. Wir haben gedacht es könnte daran liegen, dass wir anders als bei unserer Quelle im  Internet einen anderen Wiedersntand in Reihe geschaltet haben und oder einen anderen Thermisnistor haben. Dass wir einen anderen Therministor haben könnte eine Rolle spielen, da jeder Thermistor einen spezifischem B-wert hat. Da wir nicht wussten, was für ein B-Wert unser Thermistor hat, müssen wir durch eine Formel, welche Tempertaurmesswerte in KOmbinationen mit den jeweils zugehörigen Wiederstandsmesswerten nutzt, um den Materialspezifischen B-wert bestimmen. Dies werden wir in den nächsten Stunden verfolgen.
+Heute haben wir mit einem code, den wir auf der Website(/www.mymakerstuff.de/2018/05/18/arduino-tutorial-der-temperatursensor/) gefunden haben, versucht den Ntc Wiederdtand in eine Temperatur umzuzrechnen. Dabei wird sich auf die Steinhart-hart-Gleichung bezogen. Doch dieser Code hat nicht geklappt, weshlab wir uns anschließend gefrgat haben, woran das liegen könnte. Wir haben gedacht es könnte daran liegen, dass wir anders als bei unserer Quelle im  Internet einen anderen Wiederstand in Reihe geschaltet haben und oder einen anderen Thermistor haben. Dass wir einen anderen Thermistor haben könnte eine Rolle spielen, da jeder Thermistor einen spezifischem B-wert hat. Da wir nicht wussten, was für ein B-Wert unser Thermistor hat, müssen wir durch eine Formel, welche Tempertaurmesswerte in Kombinationen mit den jeweils zugehörigen Wiederstandsmesswerten nutzt, um den Materialspezifischen B-wert bestimmen. Dies werden wir in den nächsten Stunden verfolgen.
 
-heute wasserkocher, weiter probiert, mehrere websites, herr buhl hat nicht geklappt, B wert ist abhänging von der dfunktion , neuer Thermistor mit board für nächste woche, auch selbser probiert mit float
+30.01.2023
+
+Heute haben wir nach vielen weiteren Messungen wieder keine passende Lösung ermittelt. Wir haben aber dafür herausgefunden, dass der B-Wert von der D-Funktion abhängig ist. Auch mit der Float-Funktion hat es nicht funktioniert. 
+ 
+ heute wasserkocher, weiter probiert, mehrere websites, herr buhl hat nicht geklappt, B wert ist abhänging von der dfunktion , neuer Thermistor mit board für nächste woche, auch selbser probiert mit float
 
 31.01.2023
-Tatsächloch hat sich herausgestellt, dass wir nicht nur einen anderen Thermistor und Wiederstand verwenden, es ist auch der Code grundsätzlich fehlerhaft, den wir von unserer Quelle entnommen hatten. Heute haben wir daher den überarbeiteten code von herr Buh( sehr freundlich) angteguckt und verstanden. Dabei planen wir in der nächsten Doppelstunde mit einem präzisen Thermometer 3 Punkte für die Steinhart Hart Formel zu bestimmen, um dann genauerer Messwerte vom Ntc zu bekommen. Unser Fehler lag darin, dass wir  unsere Quelle mit dem tutorial nicht hinterfragt hjaben und somit hat das Bestimmen der Temperatur duch den Ntc nicht geklappt. Ein Fehler war, dass der maximale Bitwert nicht 1024 war, sonder 1023 bei 5V und bei der Korrektur dieses fehlers hat anschließend das Messen grundsätzlich funktioniert. Auch hatten wir zum Beispiel eineni falschen Wiederstand in Reihe geschaltet. Der Serienwiederstand in unserem Schaltkreis hatte nur 1k Ohm, doch damit es zu einer besseren Messung kommt, sollten der Nennwiederstand des Ntcs und der Wiederstand des Serienwiederstandes möglichst gleich sein. Denn dann können die Unterschiede in den Wiederständen deutlich feiner unterschieden werden und so kommt es zu genaueren Messwerten. Also habenw ir heute gelernt unsere Quellen zu hinterfrgaen und sobald wir Informationen aufnehmen auch mit anderen zu verghleichen und gegebenfalls selbst nachzudenken. Gerade kommt es bei einer tatsächlichen Tempertatur von 19 bis 20 Gtrad zu einem Messwetr von 27 Grad. Wir hoffen , dass wir durch die neue Kalibrierung genauere Messwerte bekommen können. 
+Tatsächlich hat sich herausgestellt, dass wir nicht nur einen anderen Thermistor und Wiederstand verwenden, es ist auch der Code grundsätzlich fehlerhaft, den wir von unserer Quelle entnommen hatten. Heute haben wir daher den überarbeiteten code von herr Buh( sehr freundlich) angteguckt und verstanden. Dabei planen wir in der nächsten Doppelstunde mit einem präzisen Thermometer 3 Punkte für die Steinhart Hart Formel zu bestimmen, um dann genauerer Messwerte vom Ntc zu bekommen. Unser Fehler lag darin, dass wir  unsere Quelle mit dem tutorial nicht hinterfragt hjaben und somit hat das Bestimmen der Temperatur duch den Ntc nicht geklappt. Ein Fehler war, dass der maximale Bitwert nicht 1024 war, sonder 1023 bei 5V und bei der Korrektur dieses fehlers hat anschließend das Messen grundsätzlich funktioniert. Auch hatten wir zum Beispiel eineni falschen Wiederstand in Reihe geschaltet. Der Serienwiederstand in unserem Schaltkreis hatte nur 1k Ohm, doch damit es zu einer besseren Messung kommt, sollten der Nennwiederstand des Ntcs und der Wiederstand des Serienwiederstandes möglichst gleich sein. Denn dann können die Unterschiede in den Wiederständen deutlich feiner unterschieden werden und so kommt es zu genaueren Messwerten. Also habenw ir heute gelernt unsere Quellen zu hinterfrgaen und sobald wir Informationen aufnehmen auch mit anderen zu verghleichen und gegebenfalls selbst nachzudenken. Gerade kommt es bei einer tatsächlichen Tempertatur von 19 bis 20 Gtrad zu einem Messwetr von 27 Grad. Wir hoffen , dass wir durch die neue Kalibrierung genauere Messwerte bekommen können. 
 
 01.02.2023
 
@@ -36,20 +42,22 @@ Eis, kochendes wasser, Parameter rechner ausrechnen, Steinhart hart formel, habe
 02.02.2023
 
 Thermistor funktioniert, Transistor recherchieren, Thermistor testen, Glühbirne anschliessen ( nächster Schritt) 
+Nun hat der der Thermistor endlich funktioniert und wir haben eine passende Themperatur ermittelt, welche auch bei hohen und niedrigen Temperaturen passend ist. Dies haben wir durch Tests mit kochendem Wasser und Eiswürfeln ausprobiert. Die Temperatur, die wir errechnet haben, weicht nur ganz minimal von der eines Thermometers ab. Daraufhin haben wir dann das Wissen zu einem Transistor aufgefrischt. Mit diesem wollen wir in der nächsten Stunde die Glühbirne an den Aufbau anbauen.
 
 08.02.2023
 
-Huete aufbau von her bzhl thermistor angeguckt, plam für freitag, Kabel sichern, trnasistor mit 230 V, Kabelschuhe holt Herr buhl, Aufbau dann am Fteiitag
+Heute hat Herr Buhl den Aufbau den Aufbau geprüft, da wir mit Steckdosenstrom arbeiten und es einmal geprüft werden muss. Aktuell dürfen wir noch nicht arbeiten, weil der Steckdosenstrom noch nicht isoliert ist. Dann haben wir an den Transistor eine Kühlung geklebt, damit dieser den Strom von 230V aushält und nicht durchbrennt. Am Freitag wollen wir dann die Kabel zusammenlöten, weil die Kabelschuhe nicht zu unseren Kabeln passen.
 
 10.02.2023
 
-erstmal haben wir die Kabel verbunden, indem wir gelötet haben. ein aufbau hergestellt, dass die Lampe über den Transostor gesteiert wird. Getestet, ob der stromkreis funktionmiert, ohn eden Transistor enzuschakten, und anschließend haben wir mit dem transistor einen Fehlstrom erzeugt. dasdurch hat sich herausgestellt, dass etwas m aufbau nicht korrekt war und in der nächstenm Stunde werden wir den aufbau überarbeiten müssen. 
+Erstmal haben wir die Kabel verbunden, indem wir gelötet haben. Dann haben wir die Kabel durch Klebeband isoliert. Anschließend haben wir einen Aufbau hergestellt, sodass die Lampe über den Transostor gesteuert wird. Dazu haben wir noch getestet, ob der stromkreis funktioniert, ohne den Transistor anzuschalten. Anschließend haben wir mit dem Transistor einen Fehlstrom hergestellt, wodurch wir den ganzen Computerraum lahmgelegt haben. dadurch hat sich herausgestellt, dass etwas der Aufbau nicht korrekt war. In der nächstenm Stunde werden wir den Aufbau überarbeiten müssen. 
 
 15.02.2023 
 
-Heute haben wir recherchiert, um mit einem relay die nächste Stunde einen richtigen aufbau erzielen zu können. Dieser wird uns nächste Stunde zu verfügung stehen und dann können wir hoffentlich mit seperaten Stromkreisen den Transistor richtig steuern. Wir haben us Videos angesehen und mehrere Internetseiten durchgelesen. Dadurch haben wir uns den genauen Aufbau aus mehreren Internetseiten zusammmengeplant. Nächste Woche können wir dies dann aufbauen und haben damit dann den Aufbau unseres Projekts so gut wie fertig
+Heute haben wir recherchiert, um mit einem relay die nächste Stunde einen richtigen aufbau erzielen zu können. Dieser wird uns nächste Stunde zu verfügung stehen und dann können wir hoffentlich mit seperaten Stromkreisen den Transistor richtig steuern. Wir haben uns Videos angesehen und mehrere Internetseiten durchgelesen. Dadurch haben wir uns den genauen Aufbau aus mehreren Internetseiten zusammmengeplant. Nächste Woche können wir dies dann aufbauen und haben damit dann den Aufbau unseres Projekts so gut wie fertig
 
 22.02.23
+Heute haben wir den gaplanten Aufbau dann umgesetzt. Daraufhin haben wir dann einen Test durchgeführt.
 Heute aufbau, test mit irgentwa; FREITAG cODE SCHREIBEN für relay test mit LED dnach mit glühlampe
 
 24.02.23
@@ -58,10 +66,11 @@ relay weiter ausprobiert, lange nicht geklappt, Beschriftung vertauscht, relay 4
 
 01.03.2023
 
-Heute aufbau im Schuhkarton, erster Test mit ferttigem Aufbau, Test erflogreich und nun nächstes Ziel: PID programmieren und damit di Glhülmape steuern, PID Recherche
+Heute haben wir den Aufbau komplett fertig im Schuhkarton gehabt. Dies führte dazu, dass wir schon einen ersten Test durchführen konnten. Dieser war erfolgreich. Also können wir uns jetzt mit unserem nächsten Ziel beschäftigen. Dies ist nämlich, dass wir die Glühlampoe durch PID steuern. Außerdem haben wir uns überlegt, was wir in der Doppelstunde im Homeschooling machen können. Wir sind zu dem Entschluss gekommen uns weiter über zukünftige Themen zu informieren und unseren Blog auf vordermann zu bringen, da wir aufgrund von Zeitknappheit diesen nicht immer ganz schreiben konnten.
+
 03.03.2023 
 
-doppelstunde ist leider entfallen und daher haben wir am Blog vorherige Stunden umgeschrieben und Ergänzt, da wir dies in den Stunden manchmal im instenisven Arbeiten a, Projekt vernachlässigt haben. 
+In der heutgen Doppelstunde hatten wir Homeschooling. Also haben wir an unserem Blog gearbeitet. Da wir oft mit speziellen Sachen bis zum Ende der Stunde beschäftigt waren, konnten wir uns einige Male nur Stichpunkte machen. Diese haben wir nun zu Texten verfasst. Arvid hat dazu schon mit ersten recherchen für PID begonnen und Philipp hat sich über den Ventilat informiert.
 
 08.03 
 
