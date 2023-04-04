@@ -73,20 +73,19 @@ Diese Stunde war Arvid wieder nicht da. Ich habe den Ventilator in in den Einbau
 
 15.3
 
-Heute 
-Alles zusammengefügt, anschliessen an gesamnten Code, Temperatur falsch- warum? 
+Heute haben wir dann den Code des Ventilators mit dem Code der Glühlampe zusammengefügt. Dabei gab es allerdings einen Fehler. Uns wurde nämlich immer eine Temperatur von -273,15 Grad, also den Unterschied von Kelvin zu Celsius. Nach längerem untersuchen des Codes und des Aufbaus haben wir entdeckt, dass sich aufgrund des öfteren Transports der NTC ausgestckt hat und direkt bei einem anderen lag, wo wir es dann eingefügt haben.
 
-17.4
+17.3
 
-Loch imk Karton für Ventilator und PID Recherche, Lösung xes Problems vom 15.3 
+Heute haben wir dann den Ventilator in den Katorn eingebaut, sodass dieser die Luft aus dem Karton herauspustet. Danach haben wir uns dann über PID informiert, welches unser Projekt vervollständigen soll. Dabei gibt es allerdings viele Möglichkeiten mit der Library. Wir wollen PID aber in der einfachen Form ohne Library durchführen.
 
 24.03.23
 
-Heute haben wir weiter für PId recherchiert. Es hiess am anfang man müsste eine library verwenden, doch da dies für unser Projekt noch nicht nötig ist, haben wir nach PID gesucht, die ohne Library funktioniert. Da haben wir diese Website gefunden: http://brettbeauregard.com/blog/2011/04/improving-the-beginners-pid-introduction/
+Heute haben wir weiter für PID recherchiert. Für PID ohne Library gab es nur wenige Quellen. Am Ende haben wir allerdings eine passende gefunden, mit der wir dann gearbeitet haben. Diese haben wir dann ähnlich verwendet und in unseren Code geschrieben. Beim Prüfen gab es dann allerdings 9 Fehler, wovon wir 4 noch beheben konnten.
 
+Da haben wir diese Website gefunden: http://brettbeauregard.com/blog/2011/04/improving-the-beginners-pid-introduction/
 
-
-Und mti diesem code bis jetzt gearbeitet, der immernoch einige Probleme aufweist: 
+Und mit diesem code bis jetzt gearbeitet, der noch einige Probleme aufweist:
 
   int sensorPin = A0;
   int bitwertNTC = 0;
@@ -204,6 +203,5 @@ kd = 0.1;
 entfallen
 
 31.03.2023
-heute haben wir weiter mit pid versucht, gugvkt ob relay analog kann, getestet und ergebmnis, es klappt nicht, also: heute machen wir pid mit Ventilator und steuern Glühbirne nur mit if. 
-
+Heute haben wir die verbleibenden 5 Fehler gefunden. Also haben wir auch PID fertig. Allerdings wird die Glühbirne nicht heller oder dunkler, sondern bleibt ständig gleich. Als wir dann an die Lampe nur einen Teil des Stroms gesendet haben, haben wir heraugefunden, dass die Glühbirne entweder ganz hell oder gar nicht leuchtet. Also ist PID für die Lampe nicht möglich. Das heißt, dass wir PID auf den Ventilator anwenden müssen und die Glühlampe wie zu beginn mit if steuern müssen. Dann haben wir probiert, ob dies der Ventilator überhaupt mit der halben Geschwindigkeit arbeiten kann. Dies funktioniert. Also müssen wir nun PID auf den Ventilator umstellen. Dieser Test hat uns allerdings wieder viel Zeit gekostet, weil wir dabei herausgefunden haben, das unser Pin 6 defekt ist, mit dem wir die ganze Zeit getestet haben, ob der Ventilator mit einer Teilgeschwindigkeit laufen würde. Ab jetzt arbeiten wir also ohne Pin 6.
 
