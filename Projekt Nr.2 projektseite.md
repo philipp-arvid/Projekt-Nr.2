@@ -35,7 +35,7 @@ Das Vorgehen hat sich diesmal deutlich vom anderen Mal entschieden. Erstmal muss
 
 Diesmal wollen wir die Wärme in einem Raum steuern. Der Raum wird wieder durch ein einen Schuhkarton dargestellt. Dieser wird mit Aluminium ausgekleidet. Im Karton drin befindet sich eine Glühlampe. Diese gibt Wärme ab. es soll dann mithilfe der Glühlampe, welche durch PID gesteuert wird, eine gezielte Wärme erreicht werden. Im Karton befindet sich außerdem noch ein Ventilator, welcher die Luft im Raum abkühlt. Dieser Ventilator kann angemacht werden, damit die Glühlampe von einem weiter entfernten Wert die neu eingestellte vorgegebene Temperatur, im Raum, erreicht.
 
-<h3> 2.4 Hadwaretechnische Umsetzung </h3>
+<h3> 2.3 Hadwaretechnische Umsetzung </h3>
 
 Das ganze Projekt ist wieder in einem Schuhkarton. Dieser ist diesmal mit Aluminium ausgeklebt, damit die Wärme nicht aus dem Raum entweicht. Durch ein kleines Loch haben wir wieder die Kabel hinzugefügt. Außerdem haben wir diesmal noch ein größeres Loch gemacht. In dies haben wir den Ventilator eingebaut, um den Raum, wenn gewollt auch wieder abkühlen zu können. Der NTC und die Glühlampe befinden sich natürlich im Raum.
 
@@ -51,7 +51,7 @@ Karton Aluminiumfolie Arduino Glühlampe Kabel Netzteil(e) Transistor ventilator
 
 
 
-<h3> 2.3 Softwaretechnische Umsetzung </h3>
+<h3> 2.4 Softwaretechnische Umsetzung </h3>
 
 
 <h3> 2.5 Das Endprodukt </h3>
