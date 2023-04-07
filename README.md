@@ -266,44 +266,23 @@ In dieser Stunde haben wir nun den Ventilator an den Karton angebaut. Wir haben 
 Heute haben wir weiter für PID recherchiert. Dabei haben wir gelernt, dass man PID mit einer Library schreiben kann und dass man dies sonst auch, einfacher gehalten, ohne Library machen kann. Nach Rücksprache mit Herr Buhl, sollten wir PID ohne Library verwenden, da unser Projekt die Genauigkeit einer Library nicht benötigt und da man so die Funktionsweise von PID besser versteht. Anschließend haben wir wieder recherchiert und haben auch hier eine Quelle ohne Library gefunden. Das Konzept von PID haben wir von der [Website](http://brettbeauregard.com/blog/2011/04/improving-the-beginners-pid-introduction/) vorerst übernommmen. Beim Prüfen gab es dann allerdings 9 Fehler, wovon wir 4 noch beheben konnten. Jedoch müssen wir, aufgrund der Fehlermeldungen, noch einige Dinge bezüglich des PID Codes geauer angucken.
 
 Und mit diesem code bis jetzt gearbeitet, der noch einige Probleme aufweist:
- <details> 
 	
-  int sensorPin = A0;
-  int bitwertNTC = 0;
+	
+<details>
+    <summary>Ausschnitt des Codes für PID</summary>   
+     
+```c
+unsigned long lastTime;
+double input = T_C_H;
+double output = 0;
+double setpoint = 32; 
+	 
+	 
+	 
+double errSum;
+double lastErr;
 
- long serienWiderstand = 9920; //des Widerstandes in Serie 
-  long nennWiderstand = 10050.46; // des NTCs
-  long nennW_H = 10000; //laut Hersteller
-
-  int bWert = 3307.29; // B- Wert vom NTC
-  int b_H = 3435; //B-Wert laut Hersteller 
-
-  double widerstandNTC = 0; 
-  double kelvinBias = 273.15;// 0°Celsius in Kelvin 
-  double Tn = kelvinBias + 25; //Nenntemperatur in Kelvin 
-  double T_K_3 = 0;  //Die mit 3 Parametern errechnete IstTemperatur in Kelvin
-  double T_C_3 = 0; //Die errechnete IstTemperatur in Celsius
-
-  double T_K_B = 0;  //Die mit 2 Parametern errechnete IstTemperatur in Kelvin
-  double T_C_B = 0; //Die errechnete IstTemperatur in Celsius
-
-  double T_K_H = 0;  //Die mit Defaultparametern errechnete IstTemperatur in Kelvin
-  double T_C_H = 0; //Die mit Defaultparametern errechnete IstTemperatur in Celsius
-
-  double koA = 0.0008058251861;
-  double koB = 0.0002644552360;
-  double koC = 0.0000001421890507;
-
-
-  unsigned long lastTime;
-  double input = T_C_H;
-  double output = 0;
-  double setpoint = 32;
-
-
- double errSum, lastErr;
-
-  void compute() 
+void compute()
 
 {
 
@@ -312,74 +291,31 @@ double timeChange = (double)(now - lastTime);
 
 double error = setpoint - input; 
 errSum += (error * timeChange);
-double dErr = (error - lastErr) / timeChange; 
+double dErr = (error - lastErr) / timeChange;
 
-Output = kp * error + ki * errSum + kd * dErr; 
+Output = kp * error + ki * errSum + kd * dErr;
 
-  lastErr = error; 
-  lastTime = now; 
-
-}
-
-void setTunings(double kp, double ki, double kd)   
-
-{
-kp = 1.5;
-ki = 0.05;
-kd = 0.1;
-
+lastErr = error; 
+lastTime = now;
 
 }
 
-  const int RELAY_PIN = 8; 
+void setTunings(double kp, double ki, double kd)
 
-  void setup() {
-    pinMode (7, OUTPUT);
-    pinMode(RELAY_PIN, OUTPUT);
+{ kp = 1.5; ki = 0.05; kd = 0.1;
 
- 	Serial.begin(9600); 
+}     
 
-  }
+     
+```
 
-  void loop() {
-   digitalWrite (7,HIGH);
-    delay (100);
-    digitalWrite (7,LOW);
-    delay (1000);
+    
+</details>
+	 
 
-  	Serial.println("Sensormessung: ");
- 	bitwertNTC = analogRead(sensorPin); // lese Analogwert an A0 aus 
+	 
 	
-     //1023 entspricht maximaler Spannung  	widerstandNTC = serienWiderstand*(((double)bitwertNTC/1023)/(1-((double)bitwertNTC/1023))); // berechne den Widerstandswert vom NTC als Spannungsteiler
-
-  	T_K_3 = 1/(koA+koB*log(widerstandNTC)+koC*log(widerstandNTC)*log(widerstandNTC)*log(widerstandNTC));
   
-    T_K_B = 1/((1/Tn)+((double)1/bWert)*log((double)widerstandNTC/nennWiderstand)); // Steinhart-Hart-Gleichung ermittle die Temperatur in Kelvin     T_K_H = 1/((1/Tn)+((double)1/b_H)*log((double)widerstandNTC/nennW_H)); // Steinhart-Hart-Gleichung ermittle die Temperatur in Kelvin 
-	
-  	T_C_3 = T_K_3 - kelvinBias; // ermittle die Temperatur in °C
-  	T_C_B = T_K_B - kelvinBias; // ermittle die Temperatur in °C
-  	T_C_H = T_K_H - kelvinBias; // ermittle die Temperatur in °C
-
-  	Serial.print("Analog: "); // 
-  	Serial.println(bitwertNTC); // 
-  	Serial.print("NTC- Widerstand: "); //Gebe die ermittelten Werte aus
-  	Serial.println(widerstandNTC); // 
-  
-  	Serial.print("Temp. 3 Param: "); //Gebe die ermittelten Werte aus
-  	Serial.print(T_C_3); //
-  	Serial.print("   Temp.B: "); //Gebe die ermittelten Werte aus
-  	Serial.print(T_C_B); //
-  	Serial.print("   Temp.Default: "); //Gebe die ermittelten Werte aus
-  	Serial.print(T_C_H); //
-    Serial.println("\n");
-    delay(1000); // Warte kurz, dann mache alles nochmal
-  // if(T_C_H<35)
-  // digitalWrite(RELAY_PIN, LOW);
-   //if(T_C_H>35)
-  // digitalWrite(RELAY_PIN, HIGH);
-  }
- </details> 
-
 ### 22. Stunde vom 29.03.2023<a name="zweiundzwanzig"></a>
 
  Diese Stunde ist leider entfallen.
