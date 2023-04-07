@@ -1,11 +1,6 @@
 # Temperatur haltender Schuhkarton
 
-Hier geht es zu der [Projektseite](https://github.com/philipp-arvid/Projekt-Nr.2/blob/main/Projekt%20Nr.2%20projektseite.md)
-
-### Stundenprotokolle<a name="einf"></a>
-
-
-
+Die [Projektseite](https://github.com/philipp-arvid/Projekt-Nr.2/blob/main/Projekt%20Nr.2%20projektseite.md)
 
 
 ## Stundenübersicht
