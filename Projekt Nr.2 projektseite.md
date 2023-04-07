@@ -19,7 +19,7 @@ Auch beim Projekt "Der temperaturgesteuerte Schuhkarton" handelt es sich wieder 
 
 <h3>1.3 Genutzte Programme</h3>
 
-Arduino:
+Arduino-IDE:
 Wie im ersten Halbjahr haben wir wieder das Arduinoprogramm genutzt. Mithilfe von Sketches, die wir schreiben, können wir die angeschlossenen Bestandteile steuern, was also der Software unseres Projektes enstpricht und erst die Grundlage für das Funktionieren unseres Projektes darstellt.
 
 GitHub:
