@@ -70,6 +70,16 @@ In dieser Stunde haben wir die ersten Materialien zusammengesammelt. Auch haben 
  
 Heute haben wir einen ersten Schritt in Richtung praktischer Umsetzung unserer Idee geschafft. Wir haben es geschafft, auch nach Problemen, den Widertstand des NTCs auszulesen. Damit haben wir die Grundlage für die Temperaturberechnung gelegt. Dies wollen wir dann in den nächsten Stunden machen. Dafür haben wir schonmal den Rest der Stunde recherchiert und einen Ansatz gefunden. 
 
+<details>
+    <summary>Bild des Wärmesensors</summary>
+
+![](unnamed (1).jpg)
+
+     
+</details>
+
+
+
  ### 5. Stunde vom 24.01.2023<a name="fünf"></a>
 
 Heute haben wir weiter recherchiert, wie man einen Ntc Widersandswert in einen Temperaturwert umrechnet. Wir haben eine Quelle mit einem Code gefunden. Diesen haben wir uns genauer angeguckt, um ihn zu verstehen und anschließend haben wir ihn ausprobiert. Dieser funktioniert aber auch nach Kontrolle und der Bearbeitung einiger Fehler nicht. Also müssen wir in der nächsten Stunde weiter an der Rechnung der Temperatur arbeiten und andere Quellen heranziehen, um andere Lösungsansätze zu finden.
