@@ -131,7 +131,7 @@ In der heutgen Doppelstunde hatten wir Homeschooling. Also haben wir an unserem 
 
 ### 17. Stunde vom 08.03.2023<a name="siebzehn"></a>
 
-In der heutigen Stunde war Arvid nicht da, weil er eine Woche auf Orchesterreise ist. Philipp hat heute also den Ventilator eines alten PCs geholt und diesen auseinandergebaut, sodass wir nur noch den Ventilator ohne Kühlung, etc., haben. Dise hat vorerst viele Probleme bereitet, weil der Ventilator natürlich so gebaut ist, dass man ihn nicht auseinander bauen soll. Das Auseinanderbauen hat trotzdem funktioniert und anschließend wurde sich informiert, um den Ventilator nun für unsere Zwecke zum Funktionieren zu bringen. Dieser hat mehrere Anschlüsse, welche wir jetzt passend zuordnen können. Nächste Stunde wollen wir dann den Ventilator steuern.
+In der heutigen Stunde war Arvid nicht da, weil er eine Woche auf Orchesterreise ist. Philipp hat heute also den Ventilator eines alten PCs geholt und diesen auseinandergebaut, sodass wir nur noch den Ventilator ohne Kühlung, etc., haben. Dise hat vorerst viele Probleme bereitet, weil der Ventilator natürlich so gebaut ist, dass man ihn nicht auseinander bauen soll. Das Auseinanderbauen hat trotzdem funktioniert und anschließend habe ich mich über den Ventilator informiert, um den Ventilator nun für unsere Zwecke zum Funktionieren zu bringen. Dieser hat mehrere Anschlüsse, welche wir jetzt passend zuordnen können. Nächste Stunde wollen wir dann den Ventilator steuern.
 
 ### 18. Stunde vom 10.03.2023<a name="achtzehn"></a>
 
