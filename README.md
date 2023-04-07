@@ -96,8 +96,7 @@ Foto einbauen
 
  ### 9. Stunde vom 03.02.2023<a name="neun"></a>
 
-Thermistor funktioniert, Transistor recherchieren, Thermistor testen, Glühbirne anschliessen ( nächster Schritt) 
-Nun hat der der Thermistor endlich funktioniert und wir haben eine passende Themperatur ermittelt, welche auch bei hohen und niedrigen Temperaturen passend ist. Dies haben wir durch Tests mit kochendem Wasser und Eiswürfeln ausprobiert. Die Temperatur, die wir errechnet haben, weicht nur ganz minimal von der eines Thermometers ab. Daraufhin haben wir dann das Wissen zu einem Transistor aufgefrischt. Mit diesem wollen wir in der nächsten Stunde die Glühbirne an den Aufbau anbauen.
+Zunächst haben wir den Aufbau aus letzter Stunde wiederholt, um sicher zu gehen, dass der Thermistor immmernoch vollständig funktioniert und der Widerstand korrekt umgerechnet wird. Heute haben wir dann kontrolliert, wie gut die Temperaturernmittlung ist, indem wir den Thermistor wieder in Eiswasser und kochendes Wasser gelegt haben. Es hat sich herausgestellt, dass diese gut sowhl bei niedrigen als auch wärmeren Temperaturen im Bereich von 0 bis 100 Grad funktioniert. Die Temperatur, die ermittelt wird, weicht nur ganz minimal von der des Thermometers ab. Daraufhin haben wir dann das Wissen zu einem Transistor aufgefrischt. Mit diesem wollen wir in der nächsten Stunde die Glühbirne steuern und in unseren Aufbau integrieren.
 
 ### 10. Stunde vom 08.02.2023<a name="zehn"></a>
 
