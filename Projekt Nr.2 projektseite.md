@@ -1,6 +1,10 @@
 
 Temperatur haltender Schuhkarton
 
+
+Blog: https://github.com/philipp-arvid/Projekt-Nr.2/blob/main/README.md
+
+
 Das Team
 
 Aufgrund der sehr erfolgreichen und von Spaß geprägten Zusammenarbeit haben wir uns entschieden auch im zweiten Halbjahr das Projekt geminsam anzugehen. Dazu haben wir uns am Ende des ersten Halbjahr ein Projekt überlegt, welches auf unser jetziges aufbaut. Deshalb ist dies die weitere Zusammenarbeit das einzige sinnvolle. Abgesehen von den Voraussetzungen haben wir uns auch so schon überlegt weiterhin zusammenzuarbeiten
