@@ -135,7 +135,7 @@ In der heutigen Stunde war Arvid nicht da, weil er eine Woche auf Orchesterreise
 
 ### 18. Stunde vom 10.03.2023<a name="achtzehn"></a>
 
-Diese Stunde war Arvid wieder nicht da. Ich habe den Ventilator in in den Einbau angebunden und einen Code für diesen geschrieben. Zu Beginn habe ich den Ventilator mit Relay gesteuert. Am Ende der Stunde lief der Ventilator dann durch einen Knopf. Hierdurch wollen wir steurn, wann der Ventilator läuft. Durch die Lampe soll die Temperatur erreicht werden. Wenn wir dann eine neue Zieltemperatur haben kühlen wir den Karton manuell durch den Ventilator runter, damit die Lampe dann wieder mit PID die Zieltemperatur erreichen kann.
+Diese Stunde war Arvid nicht da. Ich habe den Ventilator in in den Einbau angebunden und einen Code für diesen geschrieben. Zu Beginn habe ich den Ventilator mit Relay gesteuert. Am Ende der Stunde lief der Ventilator dann durch einen Knopf. Hierdurch wollen wir steurn, wann der Ventilator läuft. Durch die Lampe soll die Temperatur erreicht werden. Wenn wir dann eine neue Zieltemperatur haben kühlen wir den Karton manuell durch den Ventilator runter, damit die Lampe dann wieder mit PID die Zieltemperatur erreichen kann.
 
 
 ### 19. Stunde vom 15.03.2023<a name="neunzehn"></a>
