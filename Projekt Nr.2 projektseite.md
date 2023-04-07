@@ -1,19 +1,23 @@
-
-Temperatur haltender Schuhkarton
-
+# Der temperaturgesteuerte Schuhkarton
+## Links
 
  [Stundenprotokolle](https://github.com/philipp-arvid/Projekt-Nr.2/blob/main/README.md)
+1. [Einleitung](#Einleitung)
+2. [Entwicklung des Projekts](#Entwicklung)
+3. [Fazit](#Fazit)
 
-h
-Das Team
+<h1>1. Einleitung</h1> <a name="Einleitung"></a>
+
+<h3>1.1 Das Team</h3>
 
 Aufgrund der sehr erfolgreichen und von Spaß geprägten Zusammenarbeit haben wir uns entschieden auch im zweiten Halbjahr das Projekt geminsam anzugehen. Dazu haben wir uns am Ende des ersten Halbjahr ein Projekt überlegt, welches auf unser jetziges aufbaut. Deshalb ist dies die weitere Zusammenarbeit das einzige sinnvolle. Abgesehen von den Voraussetzungen haben wir uns auch so schon überlegt weiterhin zusammenzuarbeiten
 
-Der Arduino
+<h3>1.2 Der Arduino</h3>
+
 
 Auch beim Projekt "Temperatur haltender Schuhkarton" handelt es sich wieder um ein Physical-Computing-Projekt. Diesmal wollen wir auf das Projekt im ersten Halbjahr aufbauen. Es ist weiterhin so, dass uns auch die Hardware sehr interessiert. Des Weiteren haben finden wir es sehr spannend einen tieferen Einblick in einen Bereich zu bekommen. Das erste Projekt hat uns sehr gut gefallen. Also wollen wir jetzt erst das NTC calibrieren und danach mit PID arbeiten. Dies sind schwierigere Bestandteile des Physical-Computings! welche uns aber sher interessieren und bei welchen wir denken, dass sie nach dem ersten Halbjahr noch eine Herausforderung sind, wir diese aber noch gut bewältigen können. Außerdem haben wir jetzt einen komplexeren Aufbau, da wir wieder etwas messen, allerdings diesmal die Temperatur, welche durch das calibrieren etwas schwieriger ist. Dazu haben wir diesmal noch zwei seperate Kreisläufe, welche wir jeweils über einen Kreislauf mithilfe von einem Relay oder einem Transistor steuern.
 
-Genutzte Programme
+<h3>1.3 Genutzte Programme</h3>
 
 Arduino:
 Wie im ersten Halbjahr haben wir wieder das Arduinoprogramm genutzt. Dies ist wieder die Grundlage unseres Projekts. Mithilfe von Sketches, die wir schreiben, können wir die Angeschlossenen Bestandteile steuern. Durch das Programm errechnen wir die Temperatur und steuern die Lampe und den Ventilator mithilfe anderer Bauteile, welche die Anweisungen auf getrennte Stromkreise übertragen
@@ -21,15 +25,17 @@ Wie im ersten Halbjahr haben wir wieder das Arduinoprogramm genutzt. Dies ist wi
 GitHub:
 Auf GitHub haben wir wieder unseren Blog und die Projektseite verfasst. Also haben wir unsere gesamte Arbeit gut dokumentiert.
 
-Das Vorgehen
+<h1>Entwicklung des Projekts</h1> <a name="Entwicklung"></a>
+
+<h3>2.1 Vorgehen </h3>
 
 Das Vorgehen hat sich diesmal deutlich vom anderen Mal entschieden. Erstmal mussten wir planen, wie wir beginnen und wann wir was machen, weil wir z.B. nicht sofort mit Steckdosenstrom arbeiten konnten. Dazu haben wir dieses Mal weniger mit Videos gearbeitet, da Videos nur bei sehr ähnlichen Projekten nützlich sind. Diesmal haben wir viel mit Websites gearbeitet, wo Prinzipien und Vorgänge erklärt sind. Diese haben wir dann auf unser Projekt übertragen. Ein weiterer Unterschied war, dass wir dieses Mal deutlich öfter Probleme und Fehler hatten, welche nicht nur tippfehler waren und in 1-2 Minuten behoben werden konnten. Da es öfter Fehler waren, welche auf der Website nicht auftraten, aber bei uns waren, sodass wir die Ausführung nicht starten konnten mussten wir oft noch andere Websites mit hinzunhemen und dann die verschiedenen Websites vergleichen. Auch Herr Buhl hat uns diesmal netterweise öfter geholfen, da auch mit Websites die Fehlersuche schwierig war. Des Weiteren haben wir diesmal nicht die Sachen einzeln getestet, da wir generell schon ein gutes Grundwissen haben. Wir haben die Sachen sofort in den Einbau mit eingebunden, da es sonst sehr kompliziert wäre, die Einzelnen Teile in den Gesamtaufbau einzubauen . Den Code haben wir aber oft erst einzeln geschrieben und dann in den Gesamtcode eingefügt. Insgesamt gab es mehr Probleme. Diese konnten wir aber am Ende immer lösen, was fast noch ein größeres Erfolgserlebnis ist. Trotz der Probleme war es wieder ein erfolgreiches Projekt, welches viel Spaß gemacht hat und mit viel Stress aber pünktlich fertig geworden ist.
 
-Die Idee
+<h3> 2.2 Die Idee</h3>
 
 Diesmal wollen wir die Wärme in einem Raum steuern. Der Raum wird wieder durch ein einen Schuhkarton dargestellt. Dieser wird mit Aluminium ausgekleidet. Im Karton drin befindet sich eine Glühlampe. Diese gibt Wärme ab. es soll dann mithilfe der Glühlampe, welche durch PID gesteuert wird, eine gezielte Wärme erreicht werden. Im Karton befindet sich außerdem noch ein Ventilator, welcher die Luft im Raum abkühlt. Dieser Ventilator kann angemacht werden, damit die Glühlampe von einem weiter entfernten Wert die neu eingestellte vorgegebene Temperatur, im Raum, erreicht.
 
-Hardwaretechnische Umsetzung
+<h3> 2.4 Hadwaretechnische Umsetzung </h3>
 
 Das ganze Projekt ist wieder in einem Schuhkarton. Dieser ist diesmal mit Aluminium ausgeklebt, damit die Wärme nicht aus dem Raum entweicht. Durch ein kleines Loch haben wir wieder die Kabel hinzugefügt. Außerdem haben wir diesmal noch ein größeres Loch gemacht. In dies haben wir den Ventilator eingebaut, um den Raum, wenn gewollt auch wieder abkühlen zu können. Der NTC und die Glühlampe befinden sich natürlich im Raum.
 
@@ -42,3 +48,13 @@ Als drittes haben wir dann noch die Glühbirne, welche gesteuert werden muss. Da
 Welche Teile benötigen wir dafür?
 
 Karton Aluminiumfolie Arduino Glühlampe Kabel Netzteil(e) Transistor ventilator Wärmesensoren Steckbrett
+
+
+
+<h3> 2.3 Softwaretechnische Umsetzung </h3>
+
+
+<h3> 2.5 Das Endprodukt </h3>
+
+
+<h1>3. Fazit</h1> <a name="Fazit"></a>
