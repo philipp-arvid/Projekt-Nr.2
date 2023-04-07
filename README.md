@@ -109,7 +109,7 @@ Zu Beginn haben wir diese Doppelstunde die grösseren Kabel gelötet und diese a
 
 ### 12. Stunde vom 15.02.2023<a name="zwölf"></a>
 
-Heute haben wir recherchiert, um mit einem relay die nächste Stunde einen richtigen aufbau erzielen zu können. Dieser wird uns nächste Stunde zu verfügung stehen und dann können wir hoffentlich mit seperaten Stromkreisen den Transistor richtig steuern. Wir haben uns Videos angesehen und mehrere Internetseiten durchgelesen. Dadurch haben wir uns den genauen Aufbau aus mehreren Internetseiten zusammmengeplant. Nächste Woche können wir dies dann aufbauen und haben damit dann den Aufbau unseres Projekts so gut wie fertig
+Heute haben wir als Erstes entschieden, dass wir einen Relay, anstatt einem Transistor für die Glühlampe benutzen, da es mit dem Transistor in der letzten Stunde zu einem Fehlstrom kam. Ein Relay ist wie ein Schalter mit zwei Schaltstellungen. Dieser kann praktisch von einem Steuerstromkreis einen anderen, also bei uns den Glühbrirnenstromkreis steuern. Über Relays haben wir diese Stunde erstmal nur auf mehreren Internetseiten gelesen und einige Videos angesehen, da uns ein Relay erst in der nächsten Stunde zu Verfügung gestellt werden kann. 
 
 ### 13. Stunde vom 22.02.2023<a name="dreizehn"></a>
 
