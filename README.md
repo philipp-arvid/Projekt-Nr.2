@@ -277,10 +277,13 @@ kd = 0.1;
   }
  </details> 
 
-### 22. Stunde vom 29.03.2023 <a name="zweiundzwanzig"></a
+### 22. Stunde vom 29.03.2023<a name="zweiundzwanzig"></a>
+
 	
 entfallen
 
-31.03.2023
+### 23. Stunde vom 31.03.2023<a name="dreiundzwanzig"></a>
+	
 Heute haben wir die verbleibenden 5 Fehler gefunden. Also haben wir auch PID fertig. Allerdings wird die Glühbirne nicht heller oder dunkler, sondern bleibt ständig gleich. Als wir dann an die Lampe nur einen Teil des Stroms gesendet haben, haben wir heraugefunden, dass die Glühbirne entweder ganz hell oder gar nicht leuchtet. Also ist PID für die Lampe nicht möglich. Das heißt, dass wir PID auf den Ventilator anwenden müssen und die Glühlampe wie zu beginn mit if steuern müssen. Dann haben wir probiert, ob dies der Ventilator überhaupt mit der halben Geschwindigkeit arbeiten kann. Dies funktioniert. Also müssen wir nun PID auf den Ventilator umstellen. Dieser Test hat uns allerdings wieder viel Zeit gekostet, weil wir dabei herausgefunden haben, das unser Pin 6 defekt ist, mit dem wir die ganze Zeit getestet haben, ob der Ventilator mit einer Teilgeschwindigkeit laufen würde. Ab jetzt arbeiten wir also ohne Pin 6.
 
+### Finalisierung 06.04 und 07.04.2023<a name="vierundzwanzig"></a>	
