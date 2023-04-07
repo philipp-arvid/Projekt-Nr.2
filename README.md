@@ -269,8 +269,7 @@ kd = 0.1;
 
 ### 22. Stunde vom 29.03.2023<a name="zweiundzwanzig"></a>
 
-	
-entfallen
+ Diese Stunde ist leider entfallen.
 
 ### 23. Stunde vom 31.03.2023<a name="dreiundzwanzig"></a>
 	
