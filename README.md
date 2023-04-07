@@ -251,7 +251,7 @@ In der heutigen Stunde war Arvid nicht da, weil er eine Woche auf Orchesterreise
 
 ### 18. Stunde vom 10.03.2023<a name="achtzehn"></a>
 
-Diese Stunde war Arvid wieder nicht da. Philipp hat den Ventilator in den Aufbau eingebunden und einen grunsätzlichen, simplen Code für diesen geschrieben. Zu Beginn hat Pihlipp den Ventilator mit dem Relay gesteuert. Am Ende der Stunde lief der Ventilator dann durch einen Knopf. Denn hierbei soll der Ventilator, als Extra, manuell gesteuert werden können, um die Temperatur im Schukarton extern zu beeinflussen, sodass sich die Glühbirne, welche durch PID gesteuert werden wird, anpassen muss. 
+Diese Stunde war Arvid wieder nicht da. Philipp hat den Ventilator in den Aufbau eingebunden und einen grunsätzlichen, simplen Code für diesen geschrieben. Zu Beginn hat Pihlipp den Ventilator mit dem Relay gesteuert. Am Ende der Stunde lief der Ventilator dann über einen Transistor. Denn hierbei soll der Ventilator, als Extra, manuell gesteuert werden können, um die Temperatur im Schukarton extern zu beeinflussen, sodass sich die Glühbirne, welche durch PID gesteuert werden wird, anpassen muss. 
 
 ### 19. Stunde vom 15.03.2023<a name="neunzehn"></a>
 
@@ -259,7 +259,13 @@ Heute haben wir dann den Code des Ventilators mit dem Code der Glühlampe zusamm
 
 ### 20. Stunde vom 17.03.2023<a name="zwanzig"></a>
 
-In dieser Stunde haben wir nun den Ventilator an den Karton angebaut. Wir haben ihn so angebracht, dass dieser die Luft aus dem Karton rauspustet, weshalb wir ein passendes Loch am Karton für den Ventilator aufgeschnitten haben. Nachdem dies erflogreich umgebaut wurde, haben wir angefangen, an unserem lezten Ziel zu arbeiten: PID. Beim Informieren im Internet haben wir bereits einige Websites gefunden, die einen guten Ansatz anführen. Die Recherche werden wir dann nächste Stunde weiterführen.  
+In dieser Stunde haben wir nun den Ventilator an den Karton angebaut. Außerdem haben wir den Code des Ventilators eintfernt, da wir es für praktischer hielten, dass man den Ventilator mit einem Knopf steuert. So kann man den Ventilator von aussen, durch einen Knopfdruck aktivieren. Wir haben den Ventilator dann so angebracht, dass dieser die Luft aus dem Karton rauspustet, weshalb wir ein passendes Loch am Karton für den Ventilator aufgeschnitten haben. Nachdem dies erflogreich umgebaut wurde, haben wir angefangen, an unserem lezten Ziel zu arbeiten: PID. Beim Informieren im Internet haben wir bereits einige Websites gefunden, die einen guten Ansatz anführen. Die Recherche werden wir dann nächste Stunde weiterführen. 
+<details>
+    <summary>Video</summary>
+   [youtube-link](https://youtube.com/shorts/_4Q_Bv8rrG0)
+     
+   </details>
+
 
 ### 21. Stunde vom 24.03.2023<a name="einundzwanzig"></a>
 
