@@ -131,11 +131,11 @@ In der heutgen Doppelstunde hatten wir Homeschooling. Also haben wir an unserem 
 
 ### 17. Stunde vom 08.03.2023<a name="siebzehn"></a>
 
-In der heutigen Stunde war Arvid nicht da, weil er eine Woche auf Orchesterreise ist. Philipp hat heute also den Ventilator eines alten PCs geholt und diesen auseinandergebaut, sodass wir nur noch den Ventilator ohne Kühlung, etc., haben. Dise hat vorerst viele Probleme bereitet, weil der Ventilator natürlich so gebaut ist, dass man ihn nicht auseinander bauen soll. Das Auseinanderbauen hat trotzdem funktioniert und anschließend habe ich mich über den Ventilator informiert, um den Ventilator nun für unsere Zwecke zum Funktionieren zu bringen. Dieser hat mehrere Anschlüsse, welche wir jetzt passend zuordnen können. Nächste Stunde wollen wir dann den Ventilator steuern.
+In der heutigen Stunde war Arvid nicht da, weil er eine Woche auf Orchesterreise ist. Philipp hat heute also den Ventilator eines alten PCs geholt und diesen auseinandergebaut, sodass wir nur noch den Ventilator ohne Kühlung, etc., haben. Dise hat vorerst viele Probleme bereitet, weil der Ventilator natürlich so gebaut ist, dass man ihn nicht auseinander bauen soll. Das Auseinanderbauen hat trotzdem funktioniert und anschließend wurde sich informiert, um den Ventilator nun für unsere Zwecke zum Funktionieren zu bringen. Dieser hat mehrere Anschlüsse, welche wir jetzt passend zuordnen können. Nächste Stunde wollen wir dann den Ventilator steuern.
 
 ### 18. Stunde vom 10.03.2023<a name="achtzehn"></a>
 
-Diese Stunde war Arvid nicht da. Ich habe den Ventilator in in den Einbau angebunden und einen Code für diesen geschrieben. Zu Beginn habe ich den Ventilator mit Relay gesteuert. Am Ende der Stunde lief der Ventilator dann durch einen Knopf. Hierdurch wollen wir steurn, wann der Ventilator läuft. Durch die Lampe soll die Temperatur erreicht werden. Wenn wir dann eine neue Zieltemperatur haben kühlen wir den Karton manuell durch den Ventilator runter, damit die Lampe dann wieder mit PID die Zieltemperatur erreichen kann.
+Diese Stunde war Arvid wieder nicht da. Ich habe den Ventilator in in den Einbau angebunden und einen Code für diesen geschrieben. Zu Beginn habe ich den Ventilator mit Relay gesteuert. Am Ende der Stunde lief der Ventilator dann durch einen Knopf. Hierdurch wollen wir steurn, wann der Ventilator läuft. Durch die Lampe soll die Temperatur erreicht werden. Wenn wir dann eine neue Zieltemperatur haben kühlen wir den Karton manuell durch den Ventilator runter, damit die Lampe dann wieder mit PID die Zieltemperatur erreichen kann.
 
 
 ### 19. Stunde vom 15.03.2023<a name="neunzehn"></a>
@@ -144,13 +144,11 @@ Heute haben wir dann den Code des Ventilators mit dem Code der Glühlampe zusamm
 
 ### 20. Stunde vom 17.03.2023<a name="zwanzig"></a>
 
-Heute haben wir dann den Ventilator in den Karton eingebaut, sodass dieser die Luft aus dem Karton herauspustet. Danach haben wir uns dann über PID informiert, welches unser Projekt vervollständigen soll. Dabei gibt es allerdings viele Möglichkeiten mit der Library. Wir wollen PID aber in der einfachen Form ohne Library durchführen.
+In dieser Stunde haben wir nun den Ventilator an den Karton angebaut. Wir haben ihn so angebracht, dass dieser die Luft aus dem Karton rauspustet, weshalb wir ein passendes Loch am Karton für den Ventilator aufgeschnitten haben. Nachdem dies erflogreich umgebaut wurde, haben wir angefangen, an unserem lezten Ziel zu arbeiten: PID. Beim Informieren im Internet haben wir bereits einige Websites gefunden, die einen guten Ansatz anführen. Die Recherche werden wir dann nächste Stunde weiterführen.  
 
 ### 21. Stunde vom 24.03.2023<a name="einundzwanzig"></a>
 
-Heute haben wir weiter für PID recherchiert. Für PID ohne Library gab es nur wenige Quellen. Am Ende haben wir allerdings eine passende gefunden, mit der wir dann gearbeitet haben. Diese haben wir dann ähnlich verwendet und in unseren Code geschrieben. Beim Prüfen gab es dann allerdings 9 Fehler, wovon wir 4 noch beheben konnten.
-
-Da haben wir diese Website gefunden: http://brettbeauregard.com/blog/2011/04/improving-the-beginners-pid-introduction/
+Heute haben wir weiter für PID recherchiert. Dabei haben wir gelernt, dass man PID mit einer Library schreiben kann und dass man dies sonst auch, einfacher gehalten, ohne Library machen kann. Nach Rücksprache mit Herr Buhl, sollten wir PID ohne Library verwenden, da unser Projekt die Genauigkeit einer Library nicht benötigt und da man so die Funktionsweise von PID besser versteht. Anschließend haben wir wieder recherchiert und haben auch hier eine Quelle ohne Library gefunden. Das Konzept von PID haben wir von der [Website](http://brettbeauregard.com/blog/2011/04/improving-the-beginners-pid-introduction/) vorerst übernommmen. Beim Prüfen gab es dann allerdings 9 Fehler, wovon wir 4 noch beheben konnten. Jedoch müssen wir, aufgrund der Fehlermeldungen, noch einige Dinge bezüglich des PID Codes geauer angucken.
 
 Und mit diesem code bis jetzt gearbeitet, der noch einige Probleme aufweist:
  <details> 
@@ -272,7 +270,8 @@ kd = 0.1;
  Diese Stunde ist leider entfallen.
 
 ### 23. Stunde vom 31.03.2023<a name="dreiundzwanzig"></a>
+
+In dieser Stunde haben wir zuerst weiter an PID gearbeitet, um weitere Fehlerquellen in unserem Code zu identifizieren und zu beheben. Doch dann haben wir angefangen zu hinterfragen, ob PID überhaupt beim Steuern der Glühbirne funktionieren kann. Das liegt daran, dass wir nicht wissen, ob der Relay auch Teilspannungen weiterleiten kann, also ob dann dadruch die Glühbirne auch nur teilweise heller und dunkler werden kann. Bei einem Test hat sich herausgestellt, dass der Relay keinen Teilstrom weitergeben kann. Man kann zwar beim Digitalausgang einen Teilstrom mit kleinen delays eines LOWs beim Relay erzeugen, jedoch klappt dies im zusammenhang mit PID leider nicht für den Relay, da hier ein Output für einen Analogenausgang errechnet wird(wenn man den Output mapped). Also haben wir entschieden, dass wir PID nicht für die Glühlampe verwenden, da dies gar nicht möglich ist, sondern, dass wir PID für den Ventilator umschreiben. Dafür haben wir erst getestet, ob wir PID überhaupt auf den Ventilator übertragen können. Das haben wir getestet, indem wir einen AnalogPin genutzt haben, bei dem wir eine geringere Spannung(also einen kleineren Wert von 0 bis 255) anlegen und gucken, ob der Ventilator sich auch bei niedrigeren Spannungen dreht. Dabei haben wir herausgefunden, dass sich der Ventilator ab einem Wert von 50 beim Analogpin dreht. Beim Test, ob sich der Ventilator dreht, hat sich auch herausgestellt, dass der Pin 6 an unserem Arduino defekt ist, was auch vieles erklärt hat. Nun müssen wir also unser Projekt noch fertigstellen, indem wir PID für den Ventilator umschreiben.
 	
-Heute haben wir die verbleibenden 5 Fehler gefunden. Also haben wir auch PID fertig. Allerdings wird die Glühbirne nicht heller oder dunkler, sondern bleibt ständig gleich. Als wir dann an die Lampe nur einen Teil des Stroms gesendet haben, haben wir heraugefunden, dass die Glühbirne entweder ganz hell oder gar nicht leuchtet. Also ist PID für die Lampe nicht möglich. Das heißt, dass wir PID auf den Ventilator anwenden müssen und die Glühlampe wie zu beginn mit if steuern müssen. Dann haben wir probiert, ob dies der Ventilator überhaupt mit der halben Geschwindigkeit arbeiten kann. Dies funktioniert. Also müssen wir nun PID auf den Ventilator umstellen. Dieser Test hat uns allerdings wieder viel Zeit gekostet, weil wir dabei herausgefunden haben, das unser Pin 6 defekt ist, mit dem wir die ganze Zeit getestet haben, ob der Ventilator mit einer Teilgeschwindigkeit laufen würde. Ab jetzt arbeiten wir also ohne Pin 6.
 
 ### Finalisierung 06.04 und 07.04.2023<a name="vierundzwanzig"></a>	
