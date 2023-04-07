@@ -64,11 +64,11 @@ Heute haben wir uns überlegt, welche Materialien wir für unser Projekt benöti
 
  ### 3. Stunde vom 17.01.2023<a name="drei"></a>
 
-In dieser Stunde haben wir die ersten Materialien zusammengesammelt. Nun haben wir eine 25 Watt Glühbirne und müssen uns jetzt überlegen, welchen Transistor wir brauchen um Strom aus der Steckdose steuern zu können. Als nächstes müssen wir uns auch übelergen, wie wir unseren Wärmesensor kalibrieren. Doch dies ist nicht ganz einfach, da der Npc Wärmesensor nicht linear funktioniert. Dadurch muss man dort eine Formel für den die Wärme, abhängig von dem Wiederstand, welches der Wärmesensor ist, aufstellen.
+In dieser Stunde haben wir die ersten Materialien zusammengesammelt. Auch haben wir eine klassische Glühbirne von Zuhause mitgenommen und müssen uns jetzt überlegen, welchen Transistor wir brauchen, um den Strom aus der Steckdose für die Glühbirne steuern zu können. Doch zunächst müssen wir uns auch überlegen, wie wir unseren Wärmesensor kalibrieren. Doch dies ist nicht ganz einfach, da der Ntc Thermistor nicht linear funktioniert. Dadurch muss man dort eine Funktion mit Parametern aufstellen, welche den ermittelten Widerstand in einen Temperaturwert umrechnet.
 
  ### 4. Stunde vom 18.01.2023<a name="vier"></a>
  
-Heute haben wir einen ersten Schritt geschafft. Wir haben es geschafft, auch nach Problemen den Wiedertstand des NTCs auszulesen. Damit haben wir die Grundlage für die Temperaturberechnung gelegt. Dies wollen wir dann in den nächsten Stunden machen. Dafür haben wir schonmal einen Ansatz aus dem Arduino-Forum. https://forum.arduino.cc/t/ol-temperatur-messen-welcher-oltemperaturgeber-kfz/152055/12#msg1170722 https://www.mymakerstuff.de/2018/05/18/arduino-tutorial-der-temperatursensor/
+Heute haben wir einen ersten Schritt in Richtung praktischer Umsetzung unserer Idee geschafft. Wir haben es geschafft, auch nach Problemen, den Widertstand des NTCs auszulesen. Damit haben wir die Grundlage für die Temperaturberechnung gelegt. Dies wollen wir dann in den nächsten Stunden machen. Dafür haben wir schonmal den Rest der Stunde recherchiert und einen Ansatz aus dem Arduino-Forum gefunden. https://forum.arduino.cc/t/ol-temperatur-messen-welcher-oltemperaturgeber-kfz/152055/12#msg1170722 https://www.mymakerstuff.de/2018/05/18/arduino-tutorial-der-temperatursensor/
 
  ### 5. Stunde vom 24.01.2023<a name="fünf"></a>
 
