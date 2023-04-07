@@ -10,7 +10,7 @@
 
 <h3>1.1 Das Team</h3>
 
-Aufgrund der sehr erfolgreichen und von Spaß geprägten Zusammenarbeit haben wir uns entschieden auch im zweiten Halbjahr das Projekt geminsam anzugehen. Dazu haben wir uns am Ende des ersten Halbjahr ein Projekt überlegt, welches auf unser jetziges aufbaut. Deshalb ist dies die weitere Zusammenarbeit das einzige sinnvolle. Abgesehen von den Voraussetzungen haben wir uns auch so schon überlegt weiterhin zusammenzuarbeiten
+Aufgrund der sehr erfolgreichen und von Spaß geprägten Zusammenarbeit im ersten Halbjahr, haben wir uns entschieden auch im zweiten Halbjahr das Projekt geminsam anzugehen. Dadurch, dass wir am Ende der Zeit unseres letzten Projektes noch etwas Zeit hatten, haben wir uns auch schon ein Projekt überlegt, welches wir dieses Halbjahr umsetzten wollen und welches teilweise auf unser letztes Projekt aufbaut. 
 
 <h3>1.2 Der Arduino</h3>
 
