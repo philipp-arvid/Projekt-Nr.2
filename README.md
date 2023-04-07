@@ -464,6 +464,13 @@ bitwertNTC = analogRead(sensorPin); // lese Analogwert an A0 aus
      
  </details> 
 
+<details>
+       <summary>Video</summary>
+[youtubelink](https://youtu.be/TtX-G6phrgQ)
+     
+ </details> 	
+	
+	
 	
 
 	
