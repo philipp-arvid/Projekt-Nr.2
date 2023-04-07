@@ -10,20 +10,20 @@
 
 <h3>1.1 Das Team</h3>
 
-Aufgrund der sehr erfolgreichen und von Spaß geprägten Zusammenarbeit im ersten Halbjahr, haben wir uns entschieden auch im zweiten Halbjahr das Projekt geminsam anzugehen. Dadurch, dass wir am Ende der Zeit unseres letzten Projektes noch etwas Zeit hatten, haben wir uns auch schon ein Projekt überlegt, welches wir dieses Halbjahr umsetzten wollen und welches teilweise auf unser letztes Projekt aufbaut. 
+Aufgrund der sehr erfolgreichen und von Spaß geprägten Zusammenarbeit im ersten Halbjahr, haben wir uns entschieden auch im zweiten Halbjahr das Projekt gemeinsam anzugehen. Dadurch, dass wir am Ende der Zeit unseres letzten Projektes noch etwas Zeit hatten, haben wir uns auch schon ein Projekt überlegt, welches wir dieses Halbjahr umsetzten wollen und welches teilweise auf unser letztes Projekt aufbaut. Ebenfalls haben wir beide zusammen schon einige Erfahrungen mit Arduino gesammelt und können nun gut gemeinsam unser Vorwissen anwenden und in diesem Halbjahr ausweiten.
 
 <h3>1.2 Der Arduino</h3>
 
+Auch beim Projekt "Der temperaturgesteuerte Schuhkarton" handelt es sich wieder um ein Physical-Computing-Projekt. Diesmal wollen wir auf das Projekt im ersten Halbjahr aufbauen. Es ist weiterhin so, dass uns beim Arduino die Kombination aus Software und Hardware besonders interessiert. Unser erstes Projekt hat uns beiden sehr gefallen und diesmal möchten wir aufjedenfall komplexere Schaltungen und Codes schreiben, da wir im Vergleich zu lezten Halbjahr etwas mehr Vorwissen haben. Wir verwenden weiter den Arduino und diesmal verwenden wir sowohl die Analogen, als auch die Digitalen Pins des Arduinos, um die unterschiedlichen Funktionen der Bestandteile unseres Projektes auszuführen. 
 
-Auch beim Projekt "Temperatur haltender Schuhkarton" handelt es sich wieder um ein Physical-Computing-Projekt. Diesmal wollen wir auf das Projekt im ersten Halbjahr aufbauen. Es ist weiterhin so, dass uns auch die Hardware sehr interessiert. Des Weiteren haben finden wir es sehr spannend einen tieferen Einblick in einen Bereich zu bekommen. Das erste Projekt hat uns sehr gut gefallen. Also wollen wir jetzt erst das NTC calibrieren und danach mit PID arbeiten. Dies sind schwierigere Bestandteile des Physical-Computings! welche uns aber sher interessieren und bei welchen wir denken, dass sie nach dem ersten Halbjahr noch eine Herausforderung sind, wir diese aber noch gut bewältigen können. Außerdem haben wir jetzt einen komplexeren Aufbau, da wir wieder etwas messen, allerdings diesmal die Temperatur, welche durch das calibrieren etwas schwieriger ist. Dazu haben wir diesmal noch zwei seperate Kreisläufe, welche wir jeweils über einen Kreislauf mithilfe von einem Relay oder einem Transistor steuern.
 
 <h3>1.3 Genutzte Programme</h3>
 
 Arduino:
-Wie im ersten Halbjahr haben wir wieder das Arduinoprogramm genutzt. Dies ist wieder die Grundlage unseres Projekts. Mithilfe von Sketches, die wir schreiben, können wir die Angeschlossenen Bestandteile steuern. Durch das Programm errechnen wir die Temperatur und steuern die Lampe und den Ventilator mithilfe anderer Bauteile, welche die Anweisungen auf getrennte Stromkreise übertragen
+Wie im ersten Halbjahr haben wir wieder das Arduinoprogramm genutzt. Mithilfe von Sketches, die wir schreiben, können wir die angeschlossenen Bestandteile steuern, was also der Software unseres Projektes enstpricht und erst die Grundlage für das Funktionieren unseres Projektes darstellt.
 
 GitHub:
-Auf GitHub haben wir wieder unseren Blog und die Projektseite verfasst. Also haben wir unsere gesamte Arbeit gut dokumentiert.
+Auf GitHub haben wir wieder unseren Blog und die Projektseite verfasst. Das Programm eignet sich als Versionsverwaltung zur Softwareentwicklung sehr gut zum dokumnetieren und vorstellen solch einer Arbeit.
 
 <h1>Entwicklung des Projekts</h1> <a name="Entwicklung"></a>
 
