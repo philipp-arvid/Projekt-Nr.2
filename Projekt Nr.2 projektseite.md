@@ -41,19 +41,40 @@ Diesmal wollen wir die Wärme in einem Raum steuern. Der Raum wird wieder durch 
 
 Das ganze Projekt ist wieder in einem Schuhkarton. Dieser ist diesmal mit Aluminium ausgeklebt, damit die Wärme nicht aus dem Raum entweicht. Durch ein kleines Loch haben wir wieder die Kabel hinzugefügt. Außerdem haben wir diesmal noch ein größeres Loch gemacht. In dies haben wir den Ventilator eingebaut, um den Raum, wenn gewollt auch wieder abkühlen zu können. Der NTC und die Glühlampe befinden sich natürlich im Raum.
 
-Als erstes haben wir einen Stromkreis, in den wir einen NTC eingebaut haben. Wenn die Temperatur ansteigt verringert sich der Widerstand. Wenn die Temperatur sinkt, steigt der Widerstand. Der Widerstand, welcher in Reihe geschaltet ist, und den Messungen vor und nach dem Widerstand kann man dann den Widerstand des NTC ermitteln. Durch den Widerstand, welcher sich aus der Temperatur ergibt, kann man die Temperatur errechnen. Dies läuft über den Pin A0. 
+Als erstes haben wir einen Stromkreis, in den wir einen NTC eingebaut haben. Durch den Widerstand, welcher sich aus der Temperatur ergibt, kann man die Temperatur errechnen. Dies läuft über den Pin A0. 
 
-Dann steuern wir noch den Ventilator. Diesen steuern wir über einen Transistor, da der Ventilator 12 V benötigt. Wir geben über einen Kreislauf des des Arduino eine bestimmt Anweisung, wie viel Strom der Ventilator empfangen soll. Dies wird von 0 bis 255 angegeben. Dadurch wird der Transistor sozusagen gesteuert. Dieser bekommt nur einen Teil an Strom. Durch diese Anweisung steuert der Transistor dann Stromkreis des Ventilators. Der Ventilator braucht wie schon gesagt mehr Strom und ist über den Transistor an ein Netzteil angeschlossen. Der Transistor hat drei Anschlüsse. Über 2 Anschlüsse läuft der Stromkreis. Über den dritten wird eine Anweisung durch Strom gesendet. Durch diese wird der separate Stromkreis dann gesteuert. Es soll aber oft nur ein Teil des Stroms an den Ventilator weitergegeben werden. Da dies nicht möglich ist, lässt der Transistor immer mit kleinen Zeitabständen Strom und keinen Strom zum Ventilator. Also wenn der Ventilator  127,5 erhalten soll, gibt der Transistor immer 
+Dann steuern wir noch den Ventilator. Diesen steuern wir über einen Transistor, da der Ventilator 12 V benötigt. Wir geben über einen Kreislauf des des Arduino eine bestimmt Anweisung, wie viel Strom der Ventilator empfangen soll. Dies wird von 0 bis 255 angegeben. Dadurch wird der Transistor sozusagen gesteuert. Dieser bekommt nur einen Teil an Strom. Durch diese Anweisung steuert der Transistor dann Stromkreis des Ventilators. Der Transistor hat drei Anschlüsse. Über 2Anschlüsse läuft der Stromkreis. Über den dritten wird eine Anweisung durch Strom gesendet. Durch diese wird der separate Stromkreis dann gesteuert. Es soll aber oft nur ein Teil des Stroms an den Ventilator weitergegeben werden. Da dies nicht möglich ist, lässt der Transistor immer mit kleinen Zeitabständen Strom und keinen Strom zum Ventilator. Also wenn der Ventilator  127,5 erhalten soll, gibt der Transistor immer 
 
 Als drittes haben wir dann noch die Glühbirne, welche gesteuert werden muss. Da diese Steckdosenstrom bekommen muss, arbeiten wir hier mit einem Relay. Wir arbeiten hier mit keinem Transistor, weil dieser bei dem starken Strom schnell durchbrennen kann. Hier gibt es also auch wieder zwei Stromkreise. Der erste Stromkreis geht vom Arduino zum Relay. Den Relay haben wir dann auf „normally Open“ (am Produkt falsch beschriftet) angeschlossen. Das heißt, dass Der Stromkreis unterbrochen wird, wenn Strom durch den Arduino an den dazu gegeben wird. Wenn nur der normale Stromkreis läuft, ist der Relay offen. Wenn Strom über einen dritten Anschluss dazugegeben wird, ist der Relay geschlossen. Dieser steuert dann also die Glühlampe. Wenn der Relay geschlossen ist, ist die Glühlampe aus, weil der Strom nicht weitergeleitet wird. Wenn der Relay offen ist, ist die Glühlampe an. 
-Der Relay ist ein Bauteil, welches wir davor noch nicht genutzt haben. Ein Relay ist eine Spule, die um einen Eisenkern gewickelt ist. Fließt Strom durch die Spule, entsteht ein magnetisches Feld. Dadurch wird der andere Stromkreis dann geschlossen (anderer Anschluss geöffnet). 
 
-Insgesamt ist der Aufbau diesmal deutlich komplexer. Es gibt zwei Stromkreise, welche über einen Relay und einen Transistor gesteuert werden. Dann habe wir zwei Kreisläufe, welche den Relay und den Transistor steuern. Dazu haben wir dann noch den einen Stromkreis mit dem NTC, durch welchen wir die Temperatur ermitteln können.
+Welche Teile benötigen wir dafür?
+
+Karton Aluminiumfolie Arduino Glühlampe Kabel Netzteil(e) Transistor ventilator Wärmesensoren Steckbrett
 
 
 
 <h3> 2.4 Softwaretechnische Umsetzung </h3>
+Bei diesem Projekt ist es die AUfgabe der Software, die Temperatur vom Ntc Thermistor ermitteln, den relay abhänig davon zu steuern und den Ventilator so zu aktivieren, dass er mithilfe von PID die Temperatur im Schuhkarton konstant zu halten. 
 
+ <li> Zu Beginn müssen wir aus dem Ntc Thermistor die Temperatur ermitteln. Dazu muss ein wenig gerechnet werden, da der Thermistor nur seinen Widerstandswert in abhängigkeit zur Temperatur verändert, da dieser bei steigender Temperatur, kleinere Widerstände besitzt. Also müssen wir zunächst mit dem Analogpin A0 die Spannung messen, da der Ntc wie ein Spannungsteiler fungiert. Nun muss der Widerstandswert des Ntcs ermittelt werden, da wir diesen nicht direkt messen. Hierfür wird mithilfe einer Gleichung, die den Serienwiderstand und die Spannung beinhaltet, dann der Widerstandswert des Ntcs selbst, berechnet. Auch enspricht der Bitwert des A0 Eingangs für die Maximale Spannung 1023, weshalb diese Zahl in der Gleichung vorkommt.
+ <details>
+	<summary>Auschnitt des Codes</summary>
+	
+```c
+
+	
+int sensorPin = A0;
+int bitwertNTC = 0;
+
+long serienWiderstand = 9920; //des Widerstandes in Serie
+
+  void loop() {
+  
+ widerstandNTC = serienWiderstand * (((double)bitwertNTC / 1023) / (1 - ((double)bitwertNTC / 1023))); 
+}
+	
+</details>
+ 
 
 <h3> 2.5 Das Endprodukt </h3>
 
