@@ -260,12 +260,11 @@ Heute haben wir dann den Code des Ventilators mit dem Code der Glühlampe zusamm
 ### 20. Stunde vom 17.03.2023<a name="zwanzig"></a>
 
 In dieser Stunde haben wir nun den Ventilator an den Karton angebaut. Außerdem haben wir den Code des Ventilators eintfernt, da wir es für praktischer hielten, dass man den Ventilator mit einem Knopf steuert. So kann man den Ventilator von aussen, durch einen Knopfdruck aktivieren. Wir haben den Ventilator dann so angebracht, dass dieser die Luft aus dem Karton rauspustet, weshalb wir ein passendes Loch am Karton für den Ventilator aufgeschnitten haben. Nachdem dies erflogreich umgebaut wurde, haben wir angefangen, an unserem lezten Ziel zu arbeiten: PID. Beim Informieren im Internet haben wir bereits einige Websites gefunden, die einen guten Ansatz anführen. Die Recherche werden wir dann nächste Stunde weiterführen. 
-<details>
-		
-    <summary>Video</summary>
-[youtube-link](https://youtube.com/shorts/_4Q_Bv8rrG0)	
 	
- 
+<details>
+<summary>Video</summary>
+	
+[youtube-link](https://youtube.com/shorts/_4Q_Bv8rrG0)	
      
    </details>
 
