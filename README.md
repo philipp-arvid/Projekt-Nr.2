@@ -105,7 +105,7 @@ Heute haben wir angefangen am Aufbau einschliesslich der Glühbirne und dem Tran
 
 ### 11. Stunde vom 10.02.2023<a name="elf"></a>
 
-Erstmal haben wir die Kabel verbunden, indem wir gelötet haben. Dann haben wir die Kabel durch Klebeband isoliert. Anschließend haben wir einen Aufbau hergestellt, sodass die Lampe über den Transostor gesteuert wird. Dazu haben wir noch getestet, ob der stromkreis funktioniert, ohne den Transistor anzuschalten. Anschließend haben wir mit dem Transistor einen Fehlstrom hergestellt, wodurch wir den ganzen Computerraum lahmgelegt haben. dadurch hat sich herausgestellt, dass etwas der Aufbau nicht korrekt war. In der nächstenm Stunde werden wir den Aufbau überarbeiten müssen. 
+Zu Beginn haben wir diese Doppelstunde die grösseren Kabel gelötet und diese anschließend mit Klebeband isoliert. Danach haben wir alle Kabel so verbunden, dass die Glühbirne nun über den Transistor gesteuert wird. Als Nächstes haben wir dann, ohne den Transistor anzuschalten, getestet, ob der Stromkreis funktioniert und die Glühlampe leuchtet. Dies hat gut funktioniert und so wollten wir nun den Transistor zwischenschalten und mit dem Arduino steuern. Doch dies hat dazu geführt, dass es einen Fehlstrom gekommen ist, washalb der gesamte Computerraum lahmgelegt wurde. Das bedeutet, dass irgentwas falsch an unserem Aufbau war, da nicht der gesamte Strom, der rein floss, wieder rausgekommen ist. Also gab es vermutlich einen Isolationsfehler und somit war der Computerraum, durch den Fehlstrom nicht mehr für den rest der Stunde für uns nutzbar.
 
 ### 12. Stunde vom 15.02.2023<a name="zwölf"></a>
 
