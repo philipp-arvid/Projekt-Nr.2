@@ -241,6 +241,14 @@ digitalWrite(RELAY_PIN, LOW);
 
 Heute haben wir den Aufbau finalisiert und die benötigten Bestandteile in den Schuhkarton gepackt. Dies führte dazu, dass wir schon einen ersten Test durchführen konnten, welcher erflogreich war. Also können wir uns jetzt mit unserem nächsten Ziel beschäftigen, dass wir die Glühlampoe durch PID steuern. Außerdem haben wir uns überlegt, was wir in der Doppelstunde im Homeschooling machen wollen. Wir sind zu dem Entschluss gekommen, uns weiter über PID zu informieren und unseren Blog weiter auszufüllen, da wir in den Stunden manchmal bis zum Ende der Stunde, tief in der Umsetzung des Projektes verwickelt waren und so nicht immer einen Blogeintrag ausführlich schreiben konnten.
 
+<details>
+<summary>Video</summary>
+	
+[youtube-link](https://youtube.com/shorts/Syl-IBPC68w?feature=share)	
+     
+   </details>	
+	
+	
 ### 16. Stunde vom 03.03.2023<a name="sechzehn"></a>
 
 In der heutgen Doppelstunde hatten wir Homeschooling. Also haben wir an unserem Blog gearbeitet, da wir ,wie bechrieben, manchmal nur dazu gekommen sind Stichpunkte einer Stunde auf zu schrieben, welche wir dann zuhause jetzt in einen Text formulieren konnten. Auch haben wir arbeitsteilig ein wenig an PID recherchiert und Philipp hat sich schonmal mit dem Ventilator befasst, welchen wir auch noch an den Schuhkarton bauen wollen.
