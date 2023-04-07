@@ -94,6 +94,74 @@ Heute haben wir mit einem code, den wir auf der [Website](/www.mymakerstuff.de/2
 
 Tatsächlich hat sich herausgestellt, dass wir nicht nur einen anderen Thermistor und Wiederstand verwenden, es ist auch der Code grundsätzlich fehlerhaft, den wir von unserer Quelle entnommen hatten. Heute haben wir mithilfe von Herr Buhl den Code überarbeitet und die Fehler identifiziert. Dabei planen wir in der nächsten Doppelstunde mit einem präzisen Thermometer 3 Punkte für die Steinhart-Hart-Formel zu bestimmen, um dann genauerer Messwerte vom Ntc zu bekommen. Unser Fehler lag darin, dass wir unsere Quelle aus der letzten Stunde mit dem tutorial nicht hinterfragt haben. Somit hat das Bestimmen der Temperatur duch den Ntc nicht geklappt. Ein Fehler war, dass der maximale Bitwert nicht 1024 war, sonder 1023 bei 5V war und bei der Korrektur dieses fehlers hat anschließend das Messen grundsätzlich funktioniert. Auch hatten wir zum Beispiel einen falschen Widerstand in Reihe geschaltet. Der Serienwiederstand in unserem Schaltkreis hatte nur 1k Ohm, doch damit es zu einer besseren Messung kommt, sollten der Nennwiederstand des Ntcs und der Wiederstand des Serienwiederstandes möglichst gleich sein. Denn dann können die Unterschiede in den Wiederständen deutlich feiner unterschieden werden und so kommt es zu genaueren Messwerten. Also haben wir heute gelernt, unsere Quellen zu hinterfragen und sobald wir Informationen aufnehmen, auch mit anderen zu vergleichen und gegebenfalls selbst nachzudenken. Gerade kommt es bei einer tatsächlichen Tempertatur von 19 bis 20 Grad zu einem Messwert von 27 Grad. Wir hoffen, dass wir durch die neue Kalibrierung durch die Ermittlung des B-Werts genauere Messwerte bekommen können. 
 
+<details>
+    <summary>Code</summary>   
+     
+```c
+     
+int sensorPin = A0;
+int bitwertNTC = 0;
+
+long serienWiderstand = 9920; //des Widerstandes in Serie
+long nennWiderstand = 10050.46; // des NTCs
+long nennW_H = 10000; //laut Hersteller
+
+int bWert = 3307.29; // B- Wert vom NTC
+int b_H = 3435; //B-Wert laut Hersteller
+
+double widerstandNTC = 0; 
+double kelvinBias = 273.15;// 0°Celsius in Kelvin
+double Tn = kelvinBias + 25; //Nenntemperatur in Kelvin
+double T_K_3 = 0; //Die mit 3 Parametern errechnete IstTemperatur in Kelvin
+double T_C_3 = 0; //Die errechnete IstTemperatur in Celsius
+
+double T_K_B = 0; //Die mit 2 Parametern errechnete IstTemperatur in Kelvin
+double T_C_B = 0; //Die errechnete IstTemperatur in Celsius
+
+double T_K_H = 0; //Die mit Defaultparametern errechnete IstTemperatur in Kelvin
+double T_C_H = 0; //Die mit Defaultparametern errechnete IstTemperatur in Celsius
+
+double koA = 0.0008058251861;
+double koB = 0.0002644552360;
+double koC = 0.0000001421890507;
+	
+	
+void loop() {
+
+
+  Serial.println("Sensormessung: ");
+  bitwertNTC = analogRead(sensorPin); // lese Analogwert an A0 aus
+
+  //1023 entspricht maximaler Spannung
+  widerstandNTC = serienWiderstand * (((double)bitwertNTC / 1023) / (1 - ((double)bitwertNTC / 1023))); // berechne den Widerstandswert vom NTC als Spannungsteiler
+
+  T_K_3 = 1 / (koA + koB * log(widerstandNTC) + koC * log(widerstandNTC) * log(widerstandNTC) * log(widerstandNTC));
+
+  T_K_B = 1 / ((1 / Tn) + ((double)1 / bWert) * log((double)widerstandNTC / nennWiderstand)); // Steinhart-Hart-Gleichung ermittle die Temperatur in Kelvin
+  T_K_H = 1 / ((1 / Tn) + ((double)1 / b_H) * log((double)widerstandNTC / nennW_H)); // Steinhart-Hart-Gleichung ermittle die Temperatur in Kelvin
+
+  T_C_3 = T_K_3 - kelvinBias; // ermittle die Temperatur in °C
+  T_C_B = T_K_B - kelvinBias; // ermittle die Temperatur in °C
+  T_C_H = T_K_H - kelvinBias; // ermittle die Temperatur in °C
+
+	Serial.print("Analog: "); //
+  Serial.println(bitwertNTC); //
+  Serial.print("NTC- Widerstand: "); //Gebe die ermittelten Werte aus
+  Serial.println(widerstandNTC); //
+
+  Serial.print("Temp. 3 Param: "); //Gebe die ermittelten Werte aus
+  Serial.print(T_C_3); //
+  Serial.print("   Temp.B: "); //Gebe die ermittelten Werte aus
+  Serial.print(T_C_B); //
+  Serial.print("   Temp.Default: "); //Gebe die ermittelten Werte aus
+  Serial.print(T_C_H); //
+
+     
+```
+
+    
+</details>
+
 
  ### 8. Stunde vom 01.02.2023<a name="acht"></a>
  
