@@ -100,7 +100,8 @@ Zunächst haben wir den Aufbau aus letzter Stunde wiederholt, um sicher zu gehen
 
 ### 10. Stunde vom 08.02.2023<a name="zehn"></a>
 
-Heute hat Herr Buhl den Aufbau den Aufbau geprüft, da wir mit Steckdosenstrom arbeiten und es einmal geprüft werden muss. Aktuell dürfen wir noch nicht arbeiten, weil der Steckdosenstrom noch nicht isoliert ist. Dann haben wir an den Transistor eine Kühlung geklebt, damit dieser den Strom von 230V aushält und nicht durchbrennt. Am Freitag wollen wir dann die Kabel zusammenlöten, weil die Kabelschuhe nicht zu unseren Kabeln passen.
+Heute haben wir angefangen am Aufbau einschliesslich der Glühbirne und dem Transistor zu arbeiten. Als erstes haben wir ein Kühlung an den Transistor geklebt, da dieser jetzt mir Steckdosenspannung konfrontiert ist und nicht durchbrennen soll. Anschießend mussten wir das Kabel von der Steckdose zur Glühbirne durchscheiden, da wir ja dazwischen den Transistor schalten. Unseren Aufbau hat anschließend Herr Buhl einmal kontrolliert, da wir mit Steckdosenstrom, also 230 Volt arbeiten und das nicht ganz ungefährlich ist. Auch haben wir Kabelschuhe von Herr Buhl bekommen, damit wir die Kabel besserer isolieren können und das Risiko für einen Stromschlag minimieren. Doch leider passen nicht alle Kabel in passende Kabelschuhe, weshalb wir am Freitag löten müssen. 	 
+
 
 ### 11. Stunde vom 10.02.2023<a name="elf"></a>
 
