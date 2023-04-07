@@ -64,7 +64,7 @@ Heute haben wir uns überlegt, welche Materialien wir für unser Projekt benöti
 
  ### 3. Stunde vom 17.01.2023<a name="drei"></a>
 
-Heute haben wir die ersten Materialien zusammen getragen. Nun haben wir eine 25 Watt Glühbirne und müssen uns jetzt überlegen, welchen Transistor wir brauchen um Strom aus der Steckdose steuern zu können. Als nächstes müssen wir uns auch übelergen, wie wir unseren Wärmesensor kalibrieren. Doch dies ist nicht ganz einfach, da der Npc Wärmesensor nicht linear funktioniert. Dadurch muss man dort eine Formel für den die Wärme, abhängig von dem Wiederstand, welches der Wärmesensor ist, aufstellen.
+In dieser Stunde haben wir die ersten Materialien zusammengesammelt. Nun haben wir eine 25 Watt Glühbirne und müssen uns jetzt überlegen, welchen Transistor wir brauchen um Strom aus der Steckdose steuern zu können. Als nächstes müssen wir uns auch übelergen, wie wir unseren Wärmesensor kalibrieren. Doch dies ist nicht ganz einfach, da der Npc Wärmesensor nicht linear funktioniert. Dadurch muss man dort eine Formel für den die Wärme, abhängig von dem Wiederstand, welches der Wärmesensor ist, aufstellen.
 
  ### 4. Stunde vom 18.01.2023<a name="vier"></a>
  
