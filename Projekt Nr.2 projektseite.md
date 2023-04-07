@@ -2,7 +2,7 @@
 Temperatur haltender Schuhkarton
 
 
-Blog: https://github.com/philipp-arvid/Projekt-Nr.2/blob/main/README.md
+ [Stundenprotokolle](https://github.com/philipp-arvid/Projekt-Nr.2/blob/main/README.md)
 
 
 Das Team
