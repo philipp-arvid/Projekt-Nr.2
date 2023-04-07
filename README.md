@@ -155,7 +155,7 @@ void loop() {
   Serial.print(T_C_B); //
   Serial.print("   Temp.Default: "); //Gebe die ermittelten Werte aus
   Serial.print(T_C_H); //
-
+  }
      
 ```
 
