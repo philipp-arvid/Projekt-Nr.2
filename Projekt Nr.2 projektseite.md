@@ -142,10 +142,27 @@ bitwertNTC = analogRead(sensorPin); // lese Analogwert an A0 aus
 ```	
 </details>	 
 	 
+ <li> Nun haben wir noch eine Glühbirne in unserem Schuhkarton, die wir abhängig von der Temperatur steuern wollen. Dadruch, dass der Relay keine anlogwerte annimmt und nur HIGH oder LOW, sein kann, steuern wir diesen über einen digitalpin Output. Dadurch, dass der Relay keine Analogoutput-Werte verwertet, können wir auch keine Algorithmen, wie PID, werwenden, um diesen zu steuern. Daher haben wir uns eine simple Lösung überlegt, und steuern diesen einfach nur über einen If() Befehl. Somit habe wir einen Schwellentemperaturwert, welcher entweder überschritten, oder unterschritten wird. Je nachdem, wo sich die Temperatur befindet, ist die Glühlampe an oder aus. Dabei ist auch wichitg zu beachten, dass der Relay Stromfluss ermöglicht, wenn der Output an den Relay LOW ist. 
+ <details>
+	<summary>Auschnitt des Codes</summary>
+	
+```c
+
+void setup() {
+
+pinMode(RELAY_PIN, OUTPUT);
  
+}
 
-<h3> 2.5 Das Endprodukt </h3>
-
+  ifpinMode(RELAY_PIN, OUTPUT);(T_C_H > 32)
+  digitalWrite(RELAY_PIN, HIGH); 
+  if(T_C_H < 32)
+  digitalWrite(RELAY_PIN, LOW);
+  
+```	
+</details>
+	 
+	 
    [youtube-link1](https://youtu.be/TtX-G6phrgQ)	  
 
    [youtube-link2](https://youtu.be/DlXQkOoCB9U)	  
