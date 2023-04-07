@@ -12,6 +12,53 @@ Zurück zur [Projektseite](https://github.com/philipp-arvid/Projekt-Nr.2/blob/ma
 
 ## Stundenübersicht
 <table align="center">
+	
+    
+<tr>
+    <td><a href=#eins>1. Stunde am 10.01.2023</a></td>
+    <td><a href=#zwei>2. Stunde am 11.01.2023</a></td>
+    <td><a href=#drei>3. Stunde am 17.01.2023</a></td>
+    <td><a href=#vier>4.Stunde am 18.01.2023</a></td>
+    <td><a href=#fünf>5. Stunde am 24.01.2023</a></td>
+</tr>
+<tr>
+    <td><a href=#sechs>6. Stunde am 25.01.2023</a></td>
+    <td><a href=#sieben>7. Stunde am 27.01.2023</a></td>
+    <td><a href=#acht>8. Stunde am 01.02.2023</a></td>
+    <td><a href=#neun>9. Stunde am 03.02.2023</a></td>
+    <td><a href=#zehn>10. Stunde am 08.02.2023</a></td>
+
+</tr>
+<tr>
+    <td><a href=#elf>11. Stunde am 10.02.2023</a></td>
+    <td><a href=#zwölf>12. Stunde am 15.02.2023</a></td>
+    <td><a href=#dreizehn>13. Stunde am 22.02.2023</a></td>
+    <td><a href=#vierzehn>14. Stunde am 24.02.2023</a></td>
+    <td><a href=#fünfzehn>15. Stunde am 01.03.2023</a></td>
+     
+ </tr>
+ <tr>
+    <td><a href=#sechzehn>16. Stunde am 03.03.2023</a></td>
+    <td><a href=#siebzehn>17. Stunde am 08.03.2023</a></td>
+    <td><a href=#achtzehn>18. Stunde am 10.03.2023</a></td>
+    <td><a href=#neunzehn>19. Stunde am 15.03.2023</a></td>
+    <td><a href=#zwanzig>20. Stunde am 17.03.2023</a></td>
+      
+ </tr>
+ <tr>
+    <td><a href=#einundzwanzig>21. Stunde am 23.03.2023</a></td>
+    <td><a href=#zweiundzwanzig>22. Stunde am 24.03.2023</a></td> 
+    <td><a href=#dreiundzwanzig>23. Stunde am 29.03.2023</a></td>  
+    <td><a href=#vierundzwanzig>24. Stunde am 31.03.2023</a></td>
+    <td><a href=#fünfundzwanzig>Finalisierung 06.04 und 07.04.2023</a></td>
+      
+</tr>	
+	   </table>
+	
+	
+	
+	
+	
 
 10.01.2023 Zuerst gab es heute die Noten für unser letztes Projekt. Dazu gab es noch einige Rückmeldungen und uns wurde etwas zum neuen Projekt und den Möglichkeiten erzählt. Wir haben uns aufgrund des Erfolgreichen Projekts des letzten Halbjahres entschlossen weiterhin zusammenzuarbeiten. Die Grundidee des neue Projekts haben wir uns schon im letzten Halbjahr überlegt. Heute haben wir dann die Projektseite und den Blog für unser Projekt erstellt. Wir haben uns noch genauer überlegt wie wir das Projekt umsetzten wollen.
 
@@ -34,11 +81,11 @@ Heute haben wir weiter recherchiert, wie man einen Ntc Wiedersandswert in Temper
 Heute haben wir mit einem code, den wir auf der Website(/www.mymakerstuff.de/2018/05/18/arduino-tutorial-der-temperatursensor/) gefunden haben, versucht den Ntc Wiederdtand in eine Temperatur umzuzrechnen. Dabei wird sich auf die Steinhart-hart-Gleichung bezogen. Doch dieser Code hat nicht geklappt, weshlab wir uns anschließend gefrgat haben, woran das liegen könnte. Wir haben gedacht es könnte daran liegen, dass wir anders als bei unserer Quelle im  Internet einen anderen Wiederstand in Reihe geschaltet haben und oder einen anderen Thermistor haben. Dass wir einen anderen Thermistor haben könnte eine Rolle spielen, da jeder Thermistor einen spezifischem B-wert hat. Da wir nicht wussten, was für ein B-Wert unser Thermistor hat, müssen wir durch eine Formel, welche Tempertaurmesswerte in Kombinationen mit den jeweils zugehörigen Wiederstandsmesswerten nutzt, um den Materialspezifischen B-wert bestimmen. Dies werden wir in den nächsten Stunden verfolgen.
 
 
-Heute haben wir nach vielen weiteren Messungen wieder keine passende Lösung ermittelt. Wir haben aber dafür herausgefunden, dass der B-Wert von der D-Funktion abhängig ist. Auch mit der Float-Funktion hat es nicht funktioniert. 
+ (Heute haben wir nach vielen weiteren Messungen wieder keine passende Lösung ermittelt. Wir haben aber dafür herausgefunden, dass der B-Wert von der D-Funktion abhängig ist. Auch mit der Float-Funktion hat es nicht funktioniert. 
  
- heute wasserkocher, weiter probiert, mehrere websites, herr buhl hat nicht geklappt, B wert ist abhänging von der dfunktion , neuer Thermistor mit board für nächste woche, auch selbser probiert mit float
+ heute wasserkocher, weiter probiert, mehrere websites, herr buhl hat nicht geklappt, B wert ist abhänging von der dfunktion , neuer Thermistor mit board für nächste woche, auch selbser probiert mit float)
 
-31.01.2023
+27.01.2023
 Tatsächlich hat sich herausgestellt, dass wir nicht nur einen anderen Thermistor und Wiederstand verwenden, es ist auch der Code grundsätzlich fehlerhaft, den wir von unserer Quelle entnommen hatten. Heute haben wir daher den überarbeiteten code von herr Buh( sehr freundlich) angteguckt und verstanden. Dabei planen wir in der nächsten Doppelstunde mit einem präzisen Thermometer 3 Punkte für die Steinhart Hart Formel zu bestimmen, um dann genauerer Messwerte vom Ntc zu bekommen. Unser Fehler lag darin, dass wir  unsere Quelle mit dem tutorial nicht hinterfragt hjaben und somit hat das Bestimmen der Temperatur duch den Ntc nicht geklappt. Ein Fehler war, dass der maximale Bitwert nicht 1024 war, sonder 1023 bei 5V und bei der Korrektur dieses fehlers hat anschließend das Messen grundsätzlich funktioniert. Auch hatten wir zum Beispiel eineni falschen Wiederstand in Reihe geschaltet. Der Serienwiederstand in unserem Schaltkreis hatte nur 1k Ohm, doch damit es zu einer besseren Messung kommt, sollten der Nennwiederstand des Ntcs und der Wiederstand des Serienwiederstandes möglichst gleich sein. Denn dann können die Unterschiede in den Wiederständen deutlich feiner unterschieden werden und so kommt es zu genaueren Messwerten. Also habenw ir heute gelernt unsere Quellen zu hinterfrgaen und sobald wir Informationen aufnehmen auch mit anderen zu verghleichen und gegebenfalls selbst nachzudenken. Gerade kommt es bei einer tatsächlichen Tempertatur von 19 bis 20 Gtrad zu einem Messwetr von 27 Grad. Wir hoffen , dass wir durch die neue Kalibrierung genauere Messwerte bekommen können. 
 
 01.02.2023
@@ -47,9 +94,9 @@ Heute haben wir uns darauf konzentriert genaue Parameter zu bestimmen, damit wir
 
 
 
-Eis, kochendes wasser, Parameter rechner ausrechnen, Steinhart hart formel, haben es geshcafft, neuee Werte eingesetzt 
 
-02.02.2023
+
+03.02.2023
 
 Thermistor funktioniert, Transistor recherchieren, Thermistor testen, Glühbirne anschliessen ( nächster Schritt) 
 Nun hat der der Thermistor endlich funktioniert und wir haben eine passende Themperatur ermittelt, welche auch bei hohen und niedrigen Temperaturen passend ist. Dies haben wir durch Tests mit kochendem Wasser und Eiswürfeln ausprobiert. Die Temperatur, die wir errechnet haben, weicht nur ganz minimal von der eines Thermometers ab. Daraufhin haben wir dann das Wissen zu einem Transistor aufgefrischt. Mit diesem wollen wir in der nächsten Stunde die Glühbirne an den Aufbau anbauen.
