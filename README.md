@@ -77,7 +77,7 @@ Heute haben wir weiter recherchiert, wie man einen Ntc Widersandswert in einen T
 
  ### 6. Stunde vom 25.01.2023<a name="sechs"></a>
 
-Heute haben wir mit einem code, den wir auf der Website(/www.mymakerstuff.de/2018/05/18/arduino-tutorial-der-temperatursensor/) gefunden haben, versucht den Ntc Widerstand in eine Temperatur umzuzrechnen. Dabei wird sich auf die Steinhart-Hart-Gleichung bezogen. Doch dieser Code hat nicht geklappt, weshlab wir uns anschließend gefragt haben, woran das liegen könnte. Wir haben gedacht es könnte daran liegen, dass wir anders als bei unserer Quelle im  Internet, einen anderen Widerstand in Reihe geschaltet haben und/oder einen anderen Thermistor haben. Dass wir einen anderen Thermistor haben, könnte eine Rolle spielen, da jeder Thermistor einen spezifischem B-wert hat. Da wir nicht wussten, was für ein B-Wert unser Thermistor hat, müssen wir durch eine Formel, welche Tempertaurmesswerte in Kombination mit den jeweils zugehörigen Wiederstandsmesswerten nutzt, um den Materialspezifischen B-wert bestimmen. Dies werden wir in den nächsten Stunden verfolgen.
+Heute haben wir mit einem code, den wir auf der [Website](/www.mymakerstuff.de/2018/05/18/arduino-tutorial-der-temperatursensor/) gefunden haben, versucht den Ntc Widerstand in eine Temperatur umzuzrechnen. Dabei wird sich auf die Steinhart-Hart-Gleichung bezogen. Doch dieser Code hat nicht geklappt, weshlab wir uns anschließend gefragt haben, woran das liegen könnte. Wir haben gedacht es könnte daran liegen, dass wir anders als bei unserer Quelle im  Internet, einen anderen Widerstand in Reihe geschaltet haben und/oder einen anderen Thermistor haben. Dass wir einen anderen Thermistor haben, könnte eine Rolle spielen, da jeder Thermistor einen spezifischem B-wert hat. Da wir nicht wussten, was für ein B-Wert unser Thermistor hat, müssen wir durch eine Formel, welche Tempertaurmesswerte in Kombination mit den jeweils zugehörigen Wiederstandsmesswerten nutzt, um den Materialspezifischen B-wert bestimmen. Dies werden wir in den nächsten Stunden verfolgen.
 
 
  ### 7. Stunde vom 27.01.2023<a name="sieben"></a>
@@ -135,8 +135,7 @@ In der heutigen Stunde war Arvid nicht da, weil er eine Woche auf Orchesterreise
 
 ### 18. Stunde vom 10.03.2023<a name="achtzehn"></a>
 
-Diese Stunde war Arvid wieder nicht da. Ich habe den Ventilator in in den Einbau angebunden und einen Code für diesen geschrieben. Zu Beginn habe ich den Ventilator mit Relay gesteuert. Am Ende der Stunde lief der Ventilator dann durch einen Knopf. Hierdurch wollen wir steurn, wann der Ventilator läuft. Durch die Lampe soll die Temperatur erreicht werden. Wenn wir dann eine neue Zieltemperatur haben kühlen wir den Karton manuell durch den Ventilator runter, damit die Lampe dann wieder mit PID die Zieltemperatur erreichen kann.
-
+Diese Stunde war Arvid wieder nicht da. Philipp hat den Ventilator in den Aufbau eingebunden und einen grunsätzlichen, simplen Code für diesen geschrieben. Zu Beginn hat Pihlipp den Ventilator mit dem Relay gesteuert. Am Ende der Stunde lief der Ventilator dann durch einen Knopf. Denn hierbei soll der Ventilator, als Extra, manuell gesteuert werden können, um die Temperatur im Schukarton extern zu beeinflussen, sodass sich die Glühbirne, welche durch PID gesteuert werden wird, anpassen muss. 
 
 ### 19. Stunde vom 15.03.2023<a name="neunzehn"></a>
 
