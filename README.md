@@ -113,8 +113,8 @@ Heute haben wir als Erstes entschieden, dass wir einen Relay, anstatt einem Tran
 
 ### 13. Stunde vom 22.02.2023<a name="dreizehn"></a>
 
-Heute haben wir den gaplanten Aufbau dann umgesetzt. Daraufhin haben wir dann einen Test durchgeführt.
-Heute aufbau, test mit irgentwa; FREITAG cODE SCHREIBEN für relay test mit LED dnach mit glühlampe
+In der letzten Stunde hatten wir schon im Internet einen passenden Aufbau gefunden und da wir nun den Relay hatten, konnten wir anfangen, diesen in die Tat um zu setzen. Obwohl wir alles richig aufgebaut haben, hat es nicht geklappt. In unserem Code, haben wir nur sehr simpel geschrieben, dass sich dieser mit einem delay anschaltet. Also müssen wir noch weiter recherchieren und überlegen, woran es liegen könnte. Auch haben wir überlegt, dass es sinnvoll wäre den Relay erst mit einer LED aus zu probieren und erst danach die Glühlbirne. 
+
 
 ### 14. Stunde vom 24.02.2023<a name="vierzehn"></a>  
 
