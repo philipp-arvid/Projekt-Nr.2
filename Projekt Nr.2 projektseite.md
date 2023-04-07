@@ -56,6 +56,7 @@ Karton Aluminiumfolie Arduino Glühlampe Kabel Netzteil(e) Transistor ventilator
 <h3> 2.4 Softwaretechnische Umsetzung </h3>
 Bei diesem Projekt ist es die AUfgabe der Software, die Temperatur vom Ntc Thermistor ermitteln, den relay abhänig davon zu steuern und den Ventilator so zu aktivieren, dass er mithilfe von PID die Temperatur im Schuhkarton konstant zu halten. 
 
+
  <li> Zu Beginn müssen wir aus dem Ntc Thermistor die Temperatur ermitteln. Dazu muss ein wenig gerechnet werden, da der Thermistor nur seinen Widerstandswert in abhängigkeit zur Temperatur verändert, da dieser bei steigender Temperatur, kleinere Widerstände besitzt. Also müssen wir zunächst mit dem Analogpin A0 die Spannung messen, da der Ntc wie ein Spannungsteiler fungiert. Nun muss der Widerstandswert des Ntcs ermittelt werden, da wir diesen nicht direkt messen. Hierfür wird mithilfe einer Gleichung, die den Serienwiderstand und die Spannung beinhaltet, dann der Widerstandswert des Ntcs selbst, berechnet. Auch enspricht der Bitwert des A0 Eingangs für die Maximale Spannung 1023, weshalb diese Zahl in der Gleichung vorkommt.
  <details>
 	<summary>Auschnitt des Codes</summary>
@@ -69,11 +70,78 @@ int bitwertNTC = 0;
 long serienWiderstand = 9920; //des Widerstandes in Serie
 
   void loop() {
-  
+	 
+ Serial.println("Sensormessung: ");
+bitwertNTC = analogRead(sensorPin); 
+	 
  widerstandNTC = serienWiderstand * (((double)bitwertNTC / 1023) / (1 - ((double)bitwertNTC / 1023))); 
 }
-	
+```	
 </details>
+	
+ <li> Als Nächstes müssen wir weiterhin die Temperatur aus dem Widerstandwert ermitteln. Dafür nutzen wir 3 unterschiedliche Gleichungen, um diese zu ermitteln. Aber grundsätzlich bedienen wir uns hier der Steinhart-Hart-Gleichung, mit der wir mit den Widerstandswerten des Ntcs und anderen Werten die Temperatur ermitteln können. In der Gleichung, die T_K_3 berechnet, verwenden wir die drei Parameter, die wir durch Messpunkte von den jeweiligen Widerstandswerten und der Temperaturen ermittelt haben und den ermittelten Widerstandswert, in der so eben beschriebenen Gleichung, um die Temperatur zu ermitteln. In der nächsten Gleichung, die T_K_B ermittelt, benutzen wir eine Gleichung, die mithilfe der von uns, durch ein Voltmeter gemessen, Werte für den Serienwiderstand rechnet und dem von uns berechneten spezifischen Materialwert, also B-Wert des Ntcs rechnet. In der dritten GLeichung, nutzen wir die gleiche Formel, wie die in der als letztes beschriebene Rechnung, nur mit anderen Werten. Denn hier rechnen wir mit den Werten für den Serienwiderstand und für den Ntcs vom Hersteller. Diese weisen tatsächloch von denen, von uns gemessenen Werten ab, weshalb wir auch mit diesen einmal die Temperatur berechnen. Nachdem wir mithilfe vom Ntc Widerstand die Temperatur mit unterschiedlichen Gleichungen berchnen, lassen wir uns nun all diese Werte mithilfe des seriellen Monitors anzeigen. Doch jetzt folgt noch ein letzter Schritt, da die Werte aus den eben beschrieben Gleichungen immer in Kelvin angegeben werden, müssen wir noch die Ergbebnisse immer so umrechen, dass wir diese in Grad Celsius erreichen. 
+
+ <details>
+	<summary>Auschnitt des Codes</summary>
+	
+```c
+long serienWiderstand = 9920; //des Widerstandes in Serie
+long nennWiderstand = 10050.46; // des NTCs
+long nennW_H = 10000; //laut Hersteller
+
+int bWert = 3307.29; // B- Wert vom NTC
+int b_H = 3435; //B-Wert laut Hersteller
+
+double widerstandNTC = 0; 
+double kelvinBias = 273.15;// 0°Celsius in Kelvin
+double Tn = kelvinBias + 25; //Nenntemperatur in Kelvin
+double T_K_3 = 0; //Die mit 3 Parametern errechnete IstTemperatur in Kelvin
+double T_C_3 = 0; //Die errechnete IstTemperatur in Celsius
+
+double T_K_B = 0; //Die mit 2 Parametern errechnete IstTemperatur in Kelvin
+double T_C_B = 0; //Die errechnete IstTemperatur in Celsius
+
+double T_K_H = 0; //Die mit Defaultparametern errechnete IstTemperatur in Kelvin
+double T_C_H = 0; //Die mit Defaultparametern errechnete IstTemperatur in Celsius
+
+double koA = 0.0008058251861;
+double koB = 0.0002644552360;
+double koC = 0.0000001421890507;
+
+void loop() {
+
+Serial.println("Sensormessung: ");
+bitwertNTC = analogRead(sensorPin); // lese Analogwert an A0 aus
+
+   //1023 entspricht maximaler Spannung
+ widerstandNTC = serienWiderstand * (((double)bitwertNTC / 1023) / (1 - ((double)bitwertNTC / 1023))); // berechne den Widerstandswert vom NTC als Spannungsteiler
+
+  T_K_3 = 1 / (koA + koB * log(widerstandNTC) + koC * log(widerstandNTC) * log(widerstandNTC) * log(widerstandNTC));
+
+  T_K_B = 1 / ((1 / Tn) + ((double)1 / bWert) * log((double)widerstandNTC / nennWiderstand)); // Steinhart-Hart-Gleichung ermittle die Temperatur in Kelvin
+  T_K_H = 1 / ((1 / Tn) + ((double)1 / b_H) * log((double)widerstandNTC / nennW_H)); // Steinhart-Hart-Gleichung ermittle die Temperatur in Kelvin
+
+  T_C_3 = T_K_3 - kelvinBias; // ermittle die Temperatur in °C
+  T_C_B = T_K_B - kelvinBias; // ermittle die Temperatur in °C
+  T_C_H = T_K_H - kelvinBias; // ermittle die Temperatur in °C
+	
+  Serial.print("Analog: "); //
+  Serial.println(bitwertNTC); //
+  Serial.print("NTC- Widerstand: "); //Gebe die ermittelten Werte aus
+  Serial.println(widerstandNTC); //
+
+  Serial.print("Temp. 3 Param: "); //Gebe die ermittelten Werte aus
+  Serial.print(T_C_3); //
+  Serial.print("   Temp.B: "); //Gebe die ermittelten Werte aus
+  Serial.print(T_C_B); //
+  Serial.print("   Temp.Default: "); //Gebe die ermittelten Werte aus
+  Serial.print(T_C_H); //
+  Serial.println("\n");
+  delay(1000); // Warte kurz, dann mache alles nochmal
+	 
+```	
+</details>	 
+	 
  
 
 <h3> 2.5 Das Endprodukt </h3>
