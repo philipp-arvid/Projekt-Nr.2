@@ -99,7 +99,7 @@ Tatsächlich hat sich herausgestellt, dass wir nicht nur einen anderen Thermisto
  
 Heute haben wir uns darauf konzentriert genaue Parameter zu bestimmen, damit wir einen möglichst genauen B-Wert berechnen können und so einen präziseren Thermistor haben, da unsere Werte momentan um ungefähr 7 Grad abweichen. Dafür haben wir von Herr Buhl einen Wasserkocher und Eis zur Verfügung gestellt bekommen. Nun haben wir ein Thermometer und den Thermistor in eine Tasse mit Eiswasser getan, mit dem Ziel, dass dort 0 Grad herrschen(am ende haben wir 7 Grad als Messwert genommen) und dann in eine Tasse mit kochendem Wasser, also 100 Grad. Um dann einen dritten Parameter zu erhalten haben wir eine Tasse mit ungefähr 30 Grad genommen und wieder den Widerstand mit dem Thermistor bestimmt. Nun hatten wir 3 genaue Punkte mit einer jeweiligen temperatur und einem zugehörigem Widerstandswert bestimmt und mussten diese nur noch in die Formel eingeben. Als wir diese in die Steinhart-Hart-Gleichung eingesetzt haben, haben wir einen entsprecheneden B-Wert bekommen, den wir dann in unseren Code für den Arduino eingestezt haben. Nun hat es endlich mit dem Code tatsächlich geklappt, präzise die Temperatur mit dem Thermistor zu messen. 
 
-Foto einbauen
+
 <details>
     <summary>Bild der Berechnung</summary>
 
@@ -134,7 +134,15 @@ In der letzten Stunde hatten wir schon im Internet einen passenden Aufbau gefund
 
 ### 14. Stunde vom 24.02.2023<a name="vierzehn"></a>  
 
-Heute haben wir weiter probiert, den Relay zu steuern und somit die LED zu steuern. Dies hat nach langem rumprobieren immernoch nicht geklappt. Also mussten wir uns nochmal ganz grundlegend mit dem Relay befassen, um den Fehler endlich zu finden. Wir haben zum Beispiel ein 4er Relay Module probiert und an diesem mit einem Voltmeter gemessen, ob es zu einem Output kommt, was auch nicht funktioniert hat. Danach haben wir probiert an allen möglichen Schaltstellen unseres ürsprunglichen Relays mit einer externen Netzstelle einen Impuls zu senden. Dabei habem wir endlich den Fehler gefunden, da die Beschriftungen der Schaltstellen vertauscht waren. Des Weitern haben wir realisiert, dass man den Relay nicht mit HIGH anschaltet, sondern mit LOW. Somit haben sich viele grundlegende Dinge für uns geklärt und wir haben anschließend versucht die Glühbrine nun erfolgreich an zu schliessen. Jezt haben wir einen Code geschrieben, sodass die Glühbrine bis zu einer Temperatur von 25 Grad an ist. ALs Nächstes wollen wir die Glühbirne mithilfe von PID steuern, sodass diese einen konstanen Wert im Schuhkarton anstrebt und hält. 
+Heute haben wir weiter probiert, den Relay zu steuern und somit die LED zu steuern. Dies hat nach langem rumprobieren immernoch nicht geklappt. Also mussten wir uns nochmal ganz grundlegend mit dem Relay befassen, um den Fehler endlich zu finden. Wir haben zum Beispiel ein 4er Relay Module probiert und an diesem mit einem Voltmeter gemessen, ob es zu einem Output kommt, was auch nicht funktioniert hat. Danach haben wir probiert an allen möglichen Schaltstellen unseres ürsprunglichen Relays mit einer externen Netzstelle einen Impuls zu senden. Dabei habem wir endlich den Fehler gefunden, da die Beschriftungen der Schaltstellen vertauscht waren. Des Weitern haben wir realisiert, dass man den Relay nicht mit HIGH anschaltet, sondern mit LOW. Somit haben sich viele grundlegende Dinge für uns geklärt und wir haben anschließend versucht die Glühbrine nun erfolgreich an zu schliessen. Jezt haben wir einen Code geschrieben, sodass die Glühbrine bis zu einer Temperatur von 25 Grad an ist. Als Nächstes wollen wir die Glühbirne mithilfe von PID steuern, sodass diese einen konstanen Wert im Schuhkarton anstrebt und hält. 
+
+<details>
+    <summary>Bild des Relays mit der LED</summary>
+
+![](relay%20bild.jpg)
+
+     
+</details>
 
 
 ### 15. Stunde vom 01.03.2023<a name="fünfzehn"></a>
