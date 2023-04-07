@@ -210,7 +210,7 @@ Heute haben wir weiter probiert, den Relay zu steuern und somit die LED zu steue
 ![](relay%20bild.jpg)
 
      </details>
-     
+          
 <details>
     <summary>Ausschnitt des Codes nur für den Relay</summary>   
      
@@ -233,8 +233,6 @@ digitalWrite(RELAY_PIN, LOW);
 }
 	      
 ```
-
-    
 </details>
 
 
