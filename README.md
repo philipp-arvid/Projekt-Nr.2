@@ -345,4 +345,126 @@ In dieser Stunde haben wir zuerst weiter an PID gearbeitet, um weitere Fehlerque
 
 Um unser Projekt fertig zu stellen, haben wir uns privat getroffen und daran weiter gearbeitet. Zum Glück durften wir die ganze Hardware unseres Projekts mitnehmen, sodass wir dies tun konnten. Zunächst haben wir uns am Mittwoch getroffen und weiter an PID für den Ventilator gearbeitet. Den Code für PID ohne die Library hatten wir schon von vorher, also mussten wir diesen nur noch auf den Ventilator anpassen. Am Mittwoch haben wir somit weiter am Beheben von Fehlern gearbeitet, da es viele von ihnen gab. Um zu sehen, welche Aspekte vom PID-Code funktioniert haben, haben wir alle möglichen Error-Werte, etc. , beim Serial.print, uns anzeigen lassen. Da sind wir zuerst auf das Problem gestoßen, dass der Timechange nicht richitg berechnet wurde, also haben wir dies nachgebessert. ALs wir dann anschließend die Errors uns angezeigt gehabt haben, ist uns aufgrfallen, dass beim Error selbst- also bei der Differenz zwischen dem Zielwert und dem momentanen Wert, das Berechnen nicht funktioniert. Nachdem wir dies behoben haben, stand das nächste Problem an. Denn nun hatten wir auch einen Output beim PID, doch dieser wurde immer größer- bis ins unendliche. Also haben wir uns wieder die Errors angeguckt und diesmal lag der Fehler bei ErrorSum. Denn hier addierten sich die Werte immer weiter hoch, was auch aufgrund der Formel zu einem immer größerem Anstieg des Outputs geführt hat. Dieses Problem konnten wir am Mittwoch nicht mehr lösen. Nun war es Donnersag und dies war der letzte Tag, wo wir an diesem Projekt weiter arbeiten konnten, da wir beide an diesem Nachmittag in den Urlaub fahren werden. Also haben wir weiter versucht, eine Lösung für das Problem des ErrorSums zu finden. Doch auch nach mehreren Versuchen und langer Suche nach Fehlerquellen, konnten wir nicht überlegen, wie wir das Wachstum des ErrorSums begrenzen, sodass die PID Rechung an sich noch weiterhin funktioniert. Im Anblick der Zeit und unser Wille unbedingt fertig zu werden, haben wir enstschieden eine Notlösung in Betracht zu ziehen: PID mit einer Library. Dafür haben wir sehr schnell eine passende Quelle gefunden und die folgende Library benutzt. Mit diesem Ansatz konnten wir schon nach der Bewältigung einiger. Fehler schnell einen realistischen Output generieren. Dann haben wir entschieden den Steckdosenstrom anzuschliessen und einen finalen Test zu machen. Dabei muss ein Fehler bei unserem Aufbau dazu geführt haben, dass Arvids Laptop schwarz wurde und nichts mehr gemacht hat. Nachdem wir versucht haben den Laptop mehrerer Male wieder hochzufahren hat es schließlich doch geklappt: Der Laptop funktioniert wieder(Erleicherung). Dann haben wir den Fehler im Aufbau gefunden, den Fehler behoben und wieder versucht einen Test zu machen. Diesmal hat alles endlich geklappt. Also können wir nun die Fertigstellung unseres Projekts mit PID, auch wenn wir jetzt in anbetracht der Zeit, eine Library verwenden mussten, euphorisch genießen.
 	
+	<details>
+       <summary>Code</summary>
+     
+```c
+#include <PID_v1.h> // Library im Code enthalten
+
+int sensorPin = A0;
+int bitwertNTC = 0;
+
+long serienWiderstand = 9920; //des Widerstandes in Serie
+long nennWiderstand = 10050.46; // des NTCs
+long nennW_H = 10000; //laut Hersteller
+
+int bWert = 3307.29; // B- Wert vom NTC
+int b_H = 3435; //B-Wert laut Hersteller
+
+double widerstandNTC = 0; 
+double kelvinBias = 273.15;// 0°Celsius in Kelvin
+double Tn = kelvinBias + 25; //Nenntemperatur in Kelvin
+double T_K_3 = 0; //Die mit 3 Parametern errechnete IstTemperatur in Kelvin
+double T_C_3 = 0; //Die errechnete IstTemperatur in Celsius
+
+double T_K_B = 0; //Die mit 2 Parametern errechnete IstTemperatur in Kelvin
+double T_C_B = 0; //Die errechnete IstTemperatur in Celsius
+
+double T_K_H = 0; //Die mit Defaultparametern errechnete IstTemperatur in Kelvin
+double T_C_H = 0; //Die mit Defaultparametern errechnete IstTemperatur in Celsius
+
+double koA = 0.0008058251861;
+double koB = 0.0002644552360;
+double koC = 0.0000001421890507;
+
+const int RELAY_PIN = 8; // Pin des Relays
+
+double Setpoint ; 
+double Input; 
+double Output ; 
+double ventilator ;
+
+double Kp=0.1, Ki=5, Kd=0.05; //Parameter für PID
+ 
+ PID myPID(&Input, &Output, &Setpoint, Kp, Ki, Kd, DIRECT); //Variablen der PID Library hinzufügen
+
+
+void setup() {
+
+Serial.begin(9600);   
+
+ Setpoint = 180;// Setpoint der Temperatur von 30 Grad in Werten von 0 bis 255 umgerechnet
+  
+myPID.SetMode(AUTOMATIC);// PID mit der library aktivieren
+
+myPID.SetTunings(Kp, Ki, Kd);
+  
+pinMode(5,OUTPUT);
+pinMode(RELAY_PIN, OUTPUT);
+ 
+}
+
+void loop() {
+
+Serial.println("Sensormessung: ");
+bitwertNTC = analogRead(sensorPin); // lese Analogwert an A0 aus
+
+   //1023 entspricht maximaler Spannung
+  widerstandNTC = serienWiderstand * (((double)bitwertNTC / 1023) / (1 - ((double)bitwertNTC / 1023))); // berechne den Widerstandswert vom NTC als Spannungsteiler
+
+  T_K_3 = 1 / (koA + koB * log(widerstandNTC) + koC * log(widerstandNTC) * log(widerstandNTC) * log(widerstandNTC));
+
+  T_K_B = 1 / ((1 / Tn) + ((double)1 / bWert) * log((double)widerstandNTC / nennWiderstand)); // Steinhart-Hart-Gleichung ermittle die Temperatur in Kelvin
+  T_K_H = 1 / ((1 / Tn) + ((double)1 / b_H) * log((double)widerstandNTC / nennW_H)); // Steinhart-Hart-Gleichung ermittle die Temperatur in Kelvin
+
+  T_C_3 = T_K_3 - kelvinBias; // ermittle die Temperatur in °C
+  T_C_B = T_K_B - kelvinBias; // ermittle die Temperatur in °C
+  T_C_H = T_K_H - kelvinBias; // ermittle die Temperatur in °C
+
+  Input = map(T_C_H, 18, 35, 0, 255);  //mapped die ermittelte Temperatur auf PWM Werte
+
+  myPID.Compute();// Berechnen
+
+  ventilator = 255 - Output; // Output für den Ventilator, da dieser nicht erwärmen, sondern kühlen soll
+  analogWrite(5, ventilator); 
+
+ 
+  Serial.print("Analog: "); //
+  Serial.println(bitwertNTC); //
+  Serial.print("NTC- Widerstand: "); //Gebe die ermittelten Werte aus
+  Serial.println(widerstandNTC); //
+
+  Serial.print("Temp. 3 Param: "); //Gebe die ermittelten Werte aus
+  Serial.print(T_C_3); //
+  Serial.print("   Temp.B: "); //Gebe die ermittelten Werte aus
+  Serial.print(T_C_B); //
+  Serial.print("   Temp.Default: "); //Gebe die ermittelten Werte aus
+  Serial.print(T_C_H); //
+  Serial.print("    Input");
+  Serial.print(Input);
+  Serial.print("    Setpoint");
+  Serial.print(Setpoint);
+  Serial.print("    Output");
+  Serial.print(Output);
+  Serial.print("    Ventilator");
+  Serial.print(ventilator);
+  Serial.println("\n");
+  delay(1000); // Warte kurz, dann mache alles nochmal
+
+  if(T_C_H > 32)
+  digitalWrite(RELAY_PIN, HIGH); 
+  if(T_C_H < 32)
+  digitalWrite(RELAY_PIN, LOW);
+}
+	 
+     
+```
+     
+ </details> 
+
+	
+
+	
+	
+	
 	
