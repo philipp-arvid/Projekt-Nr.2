@@ -197,20 +197,46 @@ Heute haben wir als Erstes entschieden, dass wir einen Relay, anstatt einem Tran
 
 ### 13. Stunde vom 22.02.2023<a name="dreizehn"></a>
 
-In der letzten Stunde hatten wir schon im Internet einen passenden Aufbau gefunden und da wir nun den Relay hatten, konnten wir anfangen, diesen in die Tat um zu setzen. Obwohl wir alles richig aufgebaut haben, hat es nicht geklappt. In unserem Code, haben wir nur sehr simpel geschrieben, dass sich dieser mit einem delay anschaltet. Also müssen wir noch weiter recherchieren und überlegen, woran es liegen könnte. Auch haben wir überlegt, dass es sinnvoll wäre den Relay erst mit einer LED aus zu probieren und erst danach die Glühlbirne. 
+In der letzten Stunde hatten wir schon im Internet einen passenden Aufbau gefunden und da wir nun den Relay hatten, konnten wir anfangen, diesen in die Tat um zu setzen. Obwohl wir alles richig aufgebaut haben, hat es nicht geklappt. In unserem Code, haben wir nur sehr simpel geschrieben, dass sich dieser mit einem delay anschaltet. Also müssen wir noch weiter recherchieren und überlegen, woran es liegen könnte. Auch haben wir überlegt, dass es sinnvoll wäre den Relay erst mit einer LED aus zu probieren und erst danach die Glühbirne. 
 
 
 ### 14. Stunde vom 24.02.2023<a name="vierzehn"></a>  
 
-Heute haben wir weiter probiert, den Relay zu steuern und somit die LED zu steuern. Dies hat nach langem rumprobieren immernoch nicht geklappt. Also mussten wir uns nochmal ganz grundlegend mit dem Relay befassen, um den Fehler endlich zu finden. Wir haben zum Beispiel ein 4er Relay Module probiert und an diesem mit einem Voltmeter gemessen, ob es zu einem Output kommt, was auch nicht funktioniert hat. Danach haben wir probiert an allen möglichen Schaltstellen unseres ürsprunglichen Relays mit einer externen Netzstelle einen Impuls zu senden. Dabei habem wir endlich den Fehler gefunden, da die Beschriftungen der Schaltstellen vertauscht waren. Des Weitern haben wir realisiert, dass man den Relay nicht mit HIGH anschaltet, sondern mit LOW. Somit haben sich viele grundlegende Dinge für uns geklärt und wir haben anschließend versucht die Glühbrine nun erfolgreich an zu schliessen. Jezt haben wir einen Code geschrieben, sodass die Glühbrine bis zu einer Temperatur von 25 Grad an ist. Als Nächstes wollen wir die Glühbirne mithilfe von PID steuern, sodass diese einen konstanen Wert im Schuhkarton anstrebt und hält. 
+Heute haben wir weiter probiert, den Relay zu steuern und somit die LED zu steuern. Dies hat nach langem rumprobieren immernoch nicht geklappt. Also mussten wir uns nochmal ganz grundlegend mit dem Relay befassen, um den Fehler endlich zu finden. Wir haben zum Beispiel ein 4er Relay Module probiert und an diesem mit einem Voltmeter gemessen, ob es zu einem Output kommt, was auch nicht funktioniert hat. Danach haben wir probiert an allen möglichen Schaltstellen unseres ürsprunglichen Relays mit einer externen Netzstelle einen Impuls zu senden. Dabei habem wir endlich den Fehler gefunden, da die Beschriftungen der Schaltstellen vertauscht waren. Des Weitern haben wir realisiert, dass man den Relay nicht mit HIGH anschaltet, sondern mit LOW. Somit haben sich viele grundlegende Dinge für uns geklärt und wir haben anschließend versucht die Glühbrine nun erfolgreich an zu schliessen. Jezt haben wir einen simplen Code geschrieben, sodass die Glühbrine bis zu einer Temperatur von 25 Grad an ist. Als Nächstes wollen wir die Glühbirne mithilfe von PID steuern, sodass diese einen konstanen Wert im Schuhkarton anstrebt und hält. 
 
 <details>
     <summary>Bild des Relays mit der LED</summary>
 
 ![](relay%20bild.jpg)
 
+     </details>
      
+<details>
+    <summary>Ausschnitt des Codes nur für den Relay</summary>   
+     
+```c
+     
+const int RELAY_PIN = 8;
+
+void setup() {
+	
+	 pinMode(RELAY_PIN, OUTPUT);
+}
+	
+void loop() {
+	
+if(T_C_H > 25)
+digitalWrite(RELAY_PIN, HIGH); 
+if(T_C_H < 25)
+digitalWrite(RELAY_PIN, LOW);
+	
+}
+	      
+```
+
+    
 </details>
+
 
 
 ### 15. Stunde vom 01.03.2023<a name="fünfzehn"></a>
