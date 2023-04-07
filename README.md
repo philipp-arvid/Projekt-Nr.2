@@ -73,7 +73,7 @@ Heute haben wir einen ersten Schritt in Richtung praktischer Umsetzung unserer I
 <details>
     <summary>Bild des Wärmesensors</summary>
 
-![](unnamed (1).jpg)
+![](unnamed%20(1).jpg)
 
      
 </details>
