@@ -51,9 +51,7 @@ Die Idee für das Projekt diesen Halbjahres, haben wir schon zum größten Teil 
 
  <li> Als Drittes haben wir dann noch die Glühbirne, welche gesteuert werden muss. Da diese Steckdosenstrom bekommen muss, arbeiten wir hier mit einem Relay. Wir arbeiten hier mit keinem Transistor, weil dieser bei dem starken Strom schnell durchbrennen kann. Hier gibt auch wieder zwei Stromkreise. Der Erste Stromkreis geht vom Arduino zum Relay. Ein Relay ist ein Schalter, der zwei Schaltstellungen besitzt, welche durch Strom betätigt werden können. Also können Relays durch einen Stromkreis kontrolliert werden und einen anderen steuern. In diesem Fall wird der Relay durch einen Stromkreis mit dem Arduino gesteuert und steuert selsbt den Stromkreis der Glühbrine mit der Steckdose. Den Relay haben wir dann auf „normally Open“ (am Produkt falsch beschriftet) angeschlossen. Das heißt, dass Der Stromkreis unterbrochen wird, wenn das Signal HIGH an den Relay weitergeleitet wird, also wenn über den weiteren Anschluss ein elektrisches Signal weitergeleitet wird. Wenn nur der normale Stromkreis läuft, ist der Relay offen, also bei LOW die Glühbirne an.    </li> 
 
-Verwendete Materialen: 
-
- <li>Schuhkarton, Aluminiumfolie, Arduino UNO, Glühbirne, mehrere verschiedene Kabel, Netzteil (und Steckdose), Transistor, Ventilator, Ntc Thermistor, Steckbretter, Relay, Klebeband und Krokodilklemmen.   </li>
+ <li> Verwendete Materialen: Schuhkarton, Aluminiumfolie, Arduino UNO, Glühbirne, mehrere verschiedene Kabel, Netzteil (und Steckdose), Transistor, Ventilator, Ntc Thermistor, Steckbretter, Relay, Klebeband und Krokodilklemmen.   </li>
 
 
 
