@@ -42,28 +42,28 @@ Die Idee für das Projekt diesen Halbjahres, haben wir schon zum größten Teil 
 
 <h3> 2.3 Hadwaretechnische Umsetzung </h3>
 <details>
-	<summary>Bild</summary>	
+	<summary>Hardware-Bild 1</summary>	
 	
    ![](Hardware1.jpg)
 	
 </details>
 
 <details>
-	<summary>Bild</summary>	
+	<summary>Hardware-Bild 2</summary>	
 	
    ![](Hardware2.jpg)
 	
 </details>
  
 <details>
-	<summary>Bild</summary>	
+	<summary>Hardware-Bild 3</summary>	
 	
    ![](Hardware3.jpg)
 	
 </details>
 
  <details>
-	<summary>Bild</summary>	
+	<summary>Hardware-Bild 4</summary>	
 	
    ![](Hardware4.jpg)
 	
